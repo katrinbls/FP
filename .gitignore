@@ -1,0 +1,10 @@
+.DS_STORE
+build
+*.toc
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.log
+*.run.xml
+*.pdf

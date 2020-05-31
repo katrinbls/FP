@@ -67,7 +67,7 @@ Es wurden drei verschiedene Proben von Galliumarsenid untersucht. Hierbei handel
         \toprule
         {} & {Probe 1} & {Probe 2} & {Probe 3} \\
         \midrule
-        Dotierung $N/cm^{-3}$ & - & $1,2 \cdot 10^{18}$ & $2,8 \cdot 10^{18}$ \\
+        Dotierung N/$cm^{-3}$ & - & $1,2 \cdot 10^{18}$ & $2,8 \cdot 10^{18}$ \\
         Dicke d/mm & 5,11 & 1,36 & 1,296 \\
         \bottomrule
     \end{tabular}
@@ -117,7 +117,7 @@ in Bogenmaß umgerechnet. Hierbei ist zu beachten, dass die Gradmaß Skala auf $
 \end{equation*}
 entspricht. Der auf die Probenlänge normierte Rotationswinkel der Polarisationsebene errechnet sich dann mittels der Formel
 \begin{equation}
-    \theta = \frac{1}{2\, L}(\theta_1 - \theta_2) \qquad .
+    \theta = \frac{1}{2\, L}(\theta_2 - \theta_1) \qquad .
 \end{equation}
 Damit die Längeneinheiten die gleiche Einheit besitzen, wurde $L$ hierzu in Mikrometer umgerechnet, da auch $\lambda$ diese Einheit hat.
 In Tabelle \ref{tab:atab4} sind die umgerechneten und skalierten Werte des Rotationswinkels der einzelnen Proben zu finden. Diese Werte wurden anschließend für jede der Proben gegen $\lambda^2$ 
@@ -172,7 +172,7 @@ aufgetragen, wie in den Abbildungen \ref{fig:afig2}, \ref{fig:afig3} und \ref{fi
 \begin{figure}[h]
     \centering
     \includegraphics[width=1\textwidth]{Winkel_n-dotiert_2.pdf}
-    \caption{Messwerte des Faraday-Roationswinkels der Messung mit der dotierten Galliumarsenidprobe (Probe 2) mit einer Dotierungsdichte von $N=2,8\cdot 10^{18}\, \si{cm}^{-3}$. Der Roationswinkel wurde hierzu auf die Länge der Probe $L = 1296 \si{\micro\meter}$ skaliert und gegen $\lambda ^2$ aufgetragen.}
+    \caption{Messwerte des Faraday-Roationswinkels der Messung mit der dotierten Galliumarsenidprobe (Probe 3) mit einer Dotierungsdichte von $N=2,8\cdot 10^{18}\, \si{cm}^{-3}$. Der Roationswinkel wurde hierzu auf die Länge der Probe $L = 1296 \si{\micro\meter}$ skaliert und gegen $\lambda ^2$ aufgetragen.}
     \label{fig:afig4}
 \end{figure}
 \FloatBarrier
@@ -183,7 +183,7 @@ Um die effektive Masse der Elektronen in dem Halbleiter zu bestimmen, wird der R
 \begin{equation}
     \theta_{\symup{frei}} = |\theta_{\symup{undotiert}}-\theta_{\symup{dotiert}}| \label{eq:diff}
 \end{equation}
-berechnet und anschließend gegen $\lambda^2$ aufgetragen, wie in Abbildungen \ref{fig:afig5} und \ref{fig:afig6} für je beide dotierte Proben zu sehen ist. 
+berechnet und anschließend gegen $\lambda^2$ aufgetragen, wie in Abbildungen \ref{fig:afig5} und \ref{fig:afig6} für beide dotierte Proben zu sehen ist. 
 
 \noindent
 \FloatBarrier
@@ -218,18 +218,40 @@ Für diese ergeben sich die Proportianilitätsfaktoren
     a_2 &= (1,127 \pm 0,004)10^{-5}\, \si{\micro\meter}^{-3} \qquad .
 \end{align*}
 
-Der Zusammenhang zwischen dem Rotationswinkel $\theta_{\symup{frei}}$ und der Wellenlänge $\lambda$ ist gemäß Formel \ref{eq:}
+Der Zusammenhang zwischen dem Rotationswinkel $\theta_{\symup{frei}}$ und der Wellenlänge $\lambda$ ist gemäß Formel \ref{eq:Winkel}
 gegeben, woraus sich mittels Koeffizientenvergleich für den Proportionalitätsfaktor der Zusammenhang \ref{eq:Prop} ergibt. Durch Umstellen der Gleichung \ref{eq:Prop} ergibt
 sich der Ausdruck, mit welchem die effektive Masse berechnet werden kann.
 \begin{align}
    a &= \frac{e_0^3 \, N \, B}{8 \pi \epsilon_0 c^3 n (m^{*})^2}\\ \label{eq:Prop}
    \Leftrightarrow\qquad m &= \sqrt{\frac{e_0^3 \, N \, B}{8 \pi \epsilon_0 c^3 n a}}
 \end{align}
-ergibt. Zur Berechnung der effektiven Masse wird für den Brechungsindex der Literaturwert $n=3,57$ \cite[Quelle1] verwendet. Somit ergibt sich für die effektive Masse die beiden Werte
+ergibt. Zur Berechnung der effektiven Masse wird für den Brechungsindex der Literaturwert $n=3,857$ \cite[Quelle1] verwendet. Somit ergibt sich für die effektive Masse die beiden Werte
 \begin{align*}
-    m_1^{*} &= (0,02889 \pm 0.0001)\cdot m_e \\
-    m_2^{*} &= (0.08516 \pm 0.0017)\cdot m_e \qquad .
+    m_1^{*} &= (0,02780 \pm 0.0001)\cdot m_e \\
+    m_2^{*} &= (0.08192 \pm 0.0016)\cdot m_e \qquad .
 \end{align*}
+
+\section{Diskussion}
+Wie zu erwarten, ist bei der Messung der Kraftflussdichte des Magnetfeldes ein kleines Plateau beim Maximalwert zu erkennen. Somit konnte der Wert für das Feld am Ort der Probe leicht bestimmt werden.
+
+Die gemessenen Werte der Rotationswinkel des undotierten Leiters in Abbildung \ref{fig:afig2} zeigen nicht den nach \ref{eq:Winkel2} erwarteten $\sim \frac{1}{\lambda^2}$ Verlauf. Dies lässt sich womöglich durch Messfehler erklären.
+Bei der Messung kam es bei einigen Wellenlängen zu dem Problem, dass der Nullabgleich sehr schwierig war. So kam es häufig bei kleineren Wellenlängen zu einer Übersteuerung des Selektivverstärkers. Ebenso ist aufgefallen, dass die Messung mit dem $1,72\,\si{\micro\meter}$
+Plätchen besonders schwierig war, da dieses einige Mängel aufwies und somit schien es so, als würde mehr Licht durch dieses durchkommen, als es eigentlich sollte, da häufig eine Übersteuerung, bei minimaler Drehung des Glan-Thomson-Prismas auftrat.
+
+Über den Verlauf der Messwerte in Abbildung \ref{fig:afig3} und \ref{fig:afig4} lässt sich vorerst keine Aussage machen, da hier der Einfluss aller Elektronen im Halbleiter eine Rolle spielt und somit keine genaue Aussage über die Abhängigkeit zur Wellenlänge $\lambda$ getroffen werden kann.
+Jedoch sollte der Rotationswinkel des Faraday-Effekts, wenn der Einfluss der freien Elektronen isoliert wird, proportional zu $\lambda^2$ sein. Dieses Verhalten ist in den Abbildungen \ref{fig:afig5} und \ref{fig:afig6} nur begrenzt zu beobachten. Wobei die Ergebnisse der stärker dotierten Probe
+bis auf einen Ausreißer, annähernd den erwarteten linearen Verlauf zeigen.
+
+Das Ziel des Experiments war ist die effektive Masse der Leitungselektronen in Galliumarsenid zu bestimmen. Dieses erfolgte mit Hilfe der zuvor berechneten Proportionalitätsfaktoren zwischen Rotationswinkel $\theta_{\symup{frei}}$ und $\lambda^2$. Somit ergibt sich für die effektive Masse die beiden Werte
+\begin{align*}
+    m_1^{*} &= (0,02780 \pm 0.0010)\cdot m_e \\
+    m_2^{*} &= (0.08192 \pm 0.0016)\cdot m_e \qquad .
+\end{align*}
+Verglichen mit dem Literaturwert für die effektive Masse der Leitungsbandelektronen im Halbleiter Galliumarsenid $m=0,063\, m_e$ \cite[Quelle2] weist der erste Wert eine Abweichung von circa $55\%$ auf, während der zweite Wert
+mit einer Abweichung von circa $30\%$ dem Literaturwert deutlich näher kommt. Der Mittelwert der beiden Ergebnisse $\bar{m} = (0,05486 \pm 0.0005)\cdot m_e$ weist widerum eine Abweichung von nur $13\%$ auf. 
+
+Zusammenfassend sind die Ergebnisse besser als der Verlauf der Messdaten zu Beginn vermuten lässt. Trotzdem sollte erwähnt werden, dass systematische Fehler dieses Experiment beinflusst haben. So war es zum Beispiel sehr schwerig die Apparatur genau zu justieren, was sich bereits dadurch zeigte, dass die Winkel bei dem der
+Nullabgleich erreicht war keinen $90°$-periodischen Verlauf zeigten, sondern eher $100°$-periodischen waren. Außerdem ist der Brechungsindex $n$, welche für die Berechnung der effektiven Masse $m^{*}$ benötigt wurde, ebenfalls abhängig von der Wellenlänge. Dieser wurde in diesem Experiment aber als konstant angenommen.
 
 
 \end{document}

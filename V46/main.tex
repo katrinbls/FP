@@ -3,7 +3,243 @@
 \begin{document}
 
 \maketitle
+\section{Zielsetzung}
+Ziel des Versuchs ist die Bestimmung der effektiven Masse der Leitungselektronen im n-dotiertem Galliumarsenid 
+mithilfe des Faraday-Effekts.
 
+\section{Theorie}
+\subsection{Bandstruktur von Halbleitern}
+In kristallinen Festkörpern befinden sich die Atome in einem periodischen Gitterpotential. Jedes Elektron eines einzelnen
+Atoms hat ein diskretes Energieniveau, das mit den Energieniveaus der Nachbarelektronen überlappt, wodurch eine
+Struktur aus Bändern und Bandlücken entsteht. Innerhalb eines Bandes können sich die Elektronen frei bewegen, sofern nicht alle 
+Zustände darin besetzt sind. 
+Für die Leitfähigkeit von Festkörpern sind das Leitungs- und Valenzband wichtig.
+Am absoluten Nullpunkt bei $T = 0 \si{\kelvin}$ ist das Valenzband das höchst besetzte Energieband. 
+Oberhalb des Valenzbandes liegt das Leitungsband, das bei Isolatoren und Halbleitern durch eine Bandlücke vom 
+Valenzband getrennt ist. Befinden sich Elektronen im Leitungsband wird das Material elektrisch leitfähig.
+Bei Metallen überlappen Valenzband und Leitungsband, was ihre Leitfähigkeit erklärt.
+In Abbildung \ref{fig:tfig1} ist diese Bandstruktur schematisch dargestellt.
+\FloatBarrier
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{band.png}
+    \caption{Bandstrukur von Isolatoren, Metallen und Halbmetallen. $E_F$ bezeichnet jeweils die Fermienergie.}
+    \label{fig:tfig1}
+\end{figure}
+\FloatBarrier
+\noindent
+Halbleiter sind daher am absoluten Nullpunkt nicht elektrisch leitfähig. Da die Bandlücke zwischen Leitungsband und 
+Valenzband jedoch nur sehr klein ist, kann sie bei Temperaturen größer als $T = 0 \si{\kelvin}$ leicht überwunden werden. Dabei wird ein 
+Elektron durch die thermische Anregung vom Leitungsband ins Valenzband angeregt und hinterlässt ein Loch im Valenzband. 
+Bei Raumtemperatur haben Halbleiter daher eine geringe intrinsische Leitfähigkeit. 
+
+Neben der Erhöhung der Temperatur kann die Leitfähigkeit eines Halbleiters auch durch Dotierung erhöht werden. Dazu 
+werden Fremdatome mit anderer Wertigkeit als die Atome des Halbleiters in den Halbleiter eingebracht, wodurch die 
+Ladungsträgerdichte erhöht wird. Unterschieden wird dabei zwischen n-Dotierung und p-Dotierung.
+N-Dotierung bezeichnet das Einbringen von Fremdatomen mit jeweils einem Überschusselektron in den Festkörper. Diese Atome 
+werden als Donatoren bezeichnet, und ihre Energie liegt knapp unterhalb der Leitungsbandkante. Das Überschusselektron 
+kann dann leicht ins Leitungsband angeregt werden, wodurch sich die Leitfähigkeit erhöht. 
+Bei p-Dotierung wird ein Fremdatom eingebracht, das ein Elektron weniger als die Atome des Festkörpers hat. Dieses Akzeptoratom
+führt zu einem zusätzlichen Loch innerhalb des Valenzbandes, das dann von anderen Valenzbandelektronen besetzt werden kann.
+
+\subsection{Effektive Masse}
+Um die Bewegung von Elektronen in einem Festkörper beschreiben zu können, wird das Konzept der effektiven Masse eingeführt.
+Elektronen in einem Festkörper bewegen sich quasifrei. Wird ihre Masse durch eine effektive Masse ersetzt, die den 
+Einfluss des periodischen Potentials des Gitters berücksichtigt, können sie als freie Teilchen betrachtet werden und 
+ihre Bewegungsgleichung vereinfacht sich. Dazu wird $\varepsilon(\vec{k})$ bis zur zweiten Ordnung in eine
+Taylorreihe um $k = 0$ entwicklelt, folgt für die effektive Masse $m^{*}$
+\begin{equation*}
+    m^{*}_i = \frac{\hbar^2}{\left[\frac{\partial^2 \varepsilon}{\partial k_i^2}\right]_{k = 0}} \, 
+\end{equation*}
+mit $i = x, y, z$.
+
+\subsection{Faraday-Rotation}
+Liegt an einem transpartenten Medium ein Magnetfeld an, so dreht
+sich die Polarisationsebene einer linear polarisierten Welle beim Durchgang durch das Medium, sofern das Magnetfeld
+parallel zur Ausbreitungsrichtung der Welle liegt. Dieser magnetooptische Effekt ist die Faraday-Rotation.
+
+Eine linear polarisierte Welle kann als Überlagerung zweier zirkular polarisierter Wellen mit gleicher Frequenz
+und entgegengesetzer Ausbreitungsrichtung betrachtet werden. Im Material sind dann die Brechungsindizes $n_\text{links}$ 
+und $n_\text{rechts}$ unterschiedlich, weswegen sich auch die Wellenlängen unterscheiden.
+\FloatBarrier
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{rotation.png}
+    \caption{Effekt der Faraday-Rotation: Drehung der Polarisationsebene eine elektromagnetischen Welle beim Durchgang durch ein Medium mit parallel zur Ausbreitungsrichtung angelegtem Magnetfeld.}
+    \label{fig:tfig2}
+\end{figure}
+\FloatBarrier
+\noindent
+Die linerar polarisierte Welle $E(z)$ wird nun in eine rechts- und linkszirkular polarisierte Welle mit Ausbreitung in 
+$\vec{z}$-Richtung zerlegt
+\begin{equation*}
+    E(z) = \frac{E_\text{R}\left(z\right) + E_\text{L}\left(z\right)}{2} \, ,
+\end{equation*}
+sodass für Wellenzahlen $k_R \neq k_L$ für die Anteile gilt
+\begin{align*}
+    E_R (z) = \left(E_0 \vec{x_0} - i E_0 \vec{y_0}\right) \text{e}^{i k_R z} && E_L (z) = \left(E_0 \vec{x_0} + i E_0 \vec{y_0}\right) \text{e}^{i k_L z} \, .
+\end{align*}
+Beim Einfall in das Medium bei $z = 0$ ist die Polatisation der Welle dann parallel zur $\vec{x}$-Richtung mit $E(0) = E_0 \vec{x_0}$.
+Mit einigen Umformungen folgt für den Drehwinkel
+\begin{equation*}
+    \theta = \frac{L \omega}{2} \left(\frac{1}{v_{Ph_R}} - \frac{1}{v_{Ph_L}}\right) \, ,
+\end{equation*}
+wobei $v_{Ph}$ die Phasengeschwindigkeit der rechts- bzw. linkszirkular polarisierten Welle und $L$ die Länge des Materials
+bedeutet. 
+%Wird der Brechungsindex $n = \frac{c}{v_{PH}}$ verwendet, vereinfacht sich diese Gleichung zu
+%\begin{equation*}
+%    \theta = \frac{L \omega}{2 c} \left(n_R - n_L\right)
+%\end{equation*}
+Grund für diesen Effekt sind induzierte elektrische Dipolmomente innerhalb des Materials. Diese entstehen durch die Atome
+auf den Gitterplätzen, aber auch durch die Bandelektronen, die mit den Atomrümpfen wechselwirken. Zusammen erzeugen diese
+Dipole eine makroskopische Polarisation $\vec{P}$ des Materials. Bei hinreichend kleinem elektrischen Feld gilt für die 
+Polarisation der Zusammenhang
+\begin{equation}
+    \label{eq:Pol}
+    \vec{P} = \varepsilon_0 \chi \vec{E}
+\end{equation}
+mit der dielektrischen Suszeptibilität $\chi$. Ist das Material isotrop ist die Suszeptibilität ein Skalar, im Allgemeinen
+ist sie jedoch ein Tensor
+\begin{equation*}
+    \begin{pmatrix}
+        P_x \\
+        P_y \\
+        P_z
+    \end{pmatrix}
+    = \varepsilon_0 \begin{pmatrix}
+        \chi_{xx} & \chi_{xy} & \chi_{xz} \\
+        \chi_{yx} & \chi_{yy} & \chi_{yz} \\
+        \chi_{zx} & \chi_{zy} & \chi_{zz}
+    \end{pmatrix}
+    \begin{pmatrix}
+        E_x \\
+        E_y \\
+        E_z 
+    \end{pmatrix} \, .
+\end{equation*}
+Dieser Tensor ist oft symmetrisch, sodass eine Hauptachsentransformation durchgeführt werden kann. Falls im Suszeptibilitätstensor
+jedoch nicht-diagonale, konjugiert komplexe Koeffizienten auftreten, ist Doppelbrechung im Material möglich.
+Der Tensor hat dann die Form 
+\begin{equation}
+    \label{eq:tensor}
+    \chi
+    = \begin{pmatrix}
+        \chi_{xx} & i \, \chi_{xy} & 0 \\
+        - i \, \chi_{yx} & \chi_{yy} & 0 \\
+        0 & 0 & \chi_{zz}
+    \end{pmatrix} \, .
+\end{equation}
+Mit der elektromagnetischen Wellengleichung und der dielektrischen Verschiebung $\vec{D} = \varepsilon_0 \vec{E} + \vec{P}$
+folgt für die Wellenzahl $k$
+\begin{equation*}
+    k_{\pm} = \frac{\omega}{c} \sqrt{\left(1 + \chi_{xx} \right) \pm \chi_{xy}} \, .
+\end{equation*}
+Daraus folgen mit $v = \frac{\omega}{k}$ zwei Phasengeschwindigkeiten
+\begin{align*}
+    v_{Ph_R} = \frac{c}{\sqrt{1 + \chi_{xx} + \chi_{xy}}} && v_{Ph_L} = \frac{c}{\sqrt{1 + \chi_{xx} - \chi_{xy}}} \, ,
+\end{align*}
+die größer bzw. kleiner als die Phasengeschwindigkeit 
+\begin{equation*}
+    v_{Ph} = \frac{c}{\sqrt{1 + \chi_{xx}}}
+\end{equation*}
+bei $\chi_{xy} = 0$ sind. Für die Feldstärkekomponenten der durchlaufenden Welle folgt dann
+\begin{equation*}
+    E_x = \begin{cases}
+        + i E_y & \text{für} \; k_{+} \\
+        - i E_y & \text{für} \; k_{-} \, ,
+    \end{cases}
+\end{equation*}
+was zeigt, dass die linkszirkular und rechtszirkular polarisierte Welle verschiedene Phasengeschwindigkeiten haben, 
+sodass die Polarisationsrichtung der Welle beim Durchgang durch das Medium gedreht wird. Der Drehwinkel $\theta$ ist dann
+\begin{equation*}
+    \theta = \frac{L}{2} \left(k_{x} - k_{-}\right) \, .
+\end{equation*}
+Da $\chi_{xy}$ klein gegen $1 + \chi_{xx}$ ist gilt dann näherungsweise
+\begin{equation*}
+    \theta \approx \frac{L \omega}{2 c n} \chi_{xy} \, .
+\end{equation*}
+\subsection{Einfluss des Magnetfeldes}
+Bei optisch inaktiver Materie sind gilt für die Einträge des Suszeptibilitätstensors $\chi$ nun dass $\chi_{ij} = 0$ für $i \neq j$, 
+sodass der Effekt der zirkularen Doppelbrechung nicht auftritt. Das ändert sich, wenn ein Magnetfeld angelegt wird. 
+Ein gebundenes Elektron folgt dann der Bewegungsgleichung
+\begin{equation*}
+    m \frac{\text{d}^2 \vec{r}}{\text{d} t^2} + K \vec{r} = - e_0 \vec{E}(r) - e_0 \frac{\text{d} \vec{r}}{\text{d} t} \times \vec{B} \, ,
+\end{equation*} 
+wobei $m$ die Masse und $e_0$ die Ladung des Elektrons, $K$ eine Konstante, die die Bindung an die Umgebung beschreibt, und
+$\vec{r}$ die Auslenkung aus der Ruhelage ist. Für die Feldstärke $\vec{E}$ gilt $E(t) \sim \text{e}^{- i \omega t}$ und
+mit der Polarisation $\vec{P} = - N e_0 \vec{r}$ folgt
+\begin{equation*}
+    -m \omega^2 \vec{P} + K \vec{P} = e_0^2 N \vec{E} + i e_0 \omega \vec{P} \times \vec{B}
+\end{equation*}
+mit Komponenten
+\begin{align}
+    \label{eq:bfeld}
+    \left(- m \omega ^2 + K\right) P_x &= N e_0^2 E_x + i e_0 \omega P_y B \\
+    \left(- m \omega ^2 + K\right) P_y &= N e_0^2 E_y - i e_0 \omega P_x B \\
+    \left(- m \omega ^2 + K\right) P_z &= N e_0^2 E_z  
+\end{align}
+bei einem Magnetfeld in $z$-Richtung. Weiterhin gilt für die Polarisation auch Gleichung \eqref{eq:Pol} und für eine nichttriviale 
+Lösung der Gleichungen \eqref{eq:bfeld} müssen nicht-diagonale Elemente im Suszeptibilitätstensor existieren. Damit diese
+Elemente unabhängig von den Feldstärkekomponenten $E_x$ und $E_y$ sind müssen sie imaginär sein, und nach der Trennung von
+\eqref{eq:bfeld} in Real- und Imaginärteil hat der Suszeptibilitätstensor die gleiche Gestalt wie in Gleichung \eqref{eq:tensor}.
+Mit der Tensorkompontente $\chi_{xy}$ ergibt sich der Drehwinkel dann zu
+\begin{equation*}
+    \theta = \frac{e_0^3}{2 \varepsilon_0 c m^2} \frac{\omega^2}{\left(- m \omega^2 + \frac{K}{m}\right)^2 - \left(\frac{e_0}{m} \omega B\right)^2} \frac{N B L}{n} \, . 
+\end{equation*}
+Hierbei ist $\sqrt{\frac{K}{m}}$ die Resonanzfrequenz $\omega_0$ und $\frac{B e_0}{m}$ die Zyklotronfrequenz $\omega_c$, 
+die bei einem Magnetfeld $B \approx 1 \si{\tesla}$ die Größenordnung $10^{11} \si{\hertz}$ hat. Die Messfrequenz und die
+Resonanzfrequenz bei Halbleitern liegt meistens im nahen Infrarotbereich, $\omega_0 = 10^{14} - 10^{15} \si{\hertz}$, 
+weswegen gilt dass
+\begin{equation*}
+    \left(\omega_0^2 - \omega^2\right) ^2 \gg \omega^2 \omega_c^2 \, .
+\end{equation*} 
+Mit einer Messfrequenz, die weit unterhalb von $\omega_0$ liegt ergibt sich für den Winkel $\theta$ in Abhängigkeit von
+der Wellenlänge $\lambda$
+\begin{equation}
+    \label{eq:Winkel2}
+    \theta \left(\lambda\right) \approx \frac{2 \pi^2 e_0^3 c}{e_0 m^2} \frac{1}{\lambda^2 \omega_0^4} \frac{N B L}{n} \, .
+\end{equation}
+Im Grenzfall $\omega_0 \rightarrow 0$ folgt mit der effektiven Masse $m^{*}$ für quasifreie Elektronen
+\begin{equation}
+    \label{eq:Winkel}
+    \theta_\textit{frei} = \frac{e_0^3}{8 \pi^2 e_0 c^3} \frac{\lambda^2}{\left(m^{*}\right)^2} \frac{N B}{n} \, .
+\end{equation}
+
+\section{Aufbau}
+Der in diesem Versuch verwendete Aufbau ist in Abbildung \ref{fig:aufbau} dargestellt.
+\FloatBarrier
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{aufbau.png}
+    \caption{Schematischer Versuchsaufbau.}
+    \label{fig:aufbau}
+\end{figure}
+\FloatBarrier
+\noindent
+Eine Halogenlampe emittiert Licht im nahen Infrarot-Bereich. Dieses Licht durchläuft eine Sammellinse und einen 
+Lichtzerhacker, der das einfallende Licht in Impulse zerhackt. Das Licht trifft dann auf das Glan-Thomson-Prisma aus
+Kalkspat, wodurch es linear polarsiert wird. Hier ist außerdem ein Goniometer zur Messung der Winkelstellung integriert. 
+Die scheibenförmige Probe befindet sich in der Symmetrieebene eines Elektromagneten, das mit einem Konstantstromgerät 
+ein zeitlich konstantes Magnetfeld erzeugt. Hinter dem Magent befindet sich ein Interferenzfilter und ein zweites 
+Glan-Thomson-Prisma, welches das einfallende Licht in zwei senktrecht zueinander polarisierte Strahlenbündel aufteilt,
+die jeweils eine Sammellinse passieren und dann auf einen Photowiderstand aus Bleisulfid treffen, der die Lichtintensität misst. 
+Die Photowiderstände sind an einen Differenzverstärker angeschlossen, der über einen Selektivverstärker mit
+einem Oszilloskop verbunden ist. Die Ausgangsspannung des Differenzverstärkers ist proportional zur Differenz der 
+Eingangsspannungen und verschwindet, sobal diese übereinstimmen, sodass das Oszilloskop als Nulldetektor genutzt wird.
+
+\section{Durchführung}
+Vor Beginn der Messung wird die Apparatur justiert. Außerdem wird mit der Probe und einem Interferenzfilter mit 
+$1,06 \si{\micro \meter}$ überprüft, ob durch Drehen des Polarisators eine Signalamplitude von fast Null erreicht wird 
+und ob nach eienr Drehung der Polarisators um etwa 90° ein weiteres Minimum aufritt.
+Zuerst wird mit einer Hallsonde bei maximaler Stromstärke die magnetische Flussdichte $B(z)$ in Abhängigkeit vom 
+Abstand $z$ gemessen. Zuerst wird dazu nach dem Maximum von $B(z)$ gesucht und dann um das Maximum herum mit Werten 
+von $z = 100 \si{\milli\meter}$ bis $z = 127 \si{\milli\meter}$ die magnetische Flussdichte gemessen.
+Dann wird mit drei GaAs-Proben, deren Eigenschaften in Tabelle \ref{tab:atab2} aufgeführt sind, und neun verschiedenen 
+Interferenzfiltern von $1,06 \si{\micro \meter}$ bis $2,65 \si{\micro \meter}$ die Faraday-Rotation vermessen.
+Dazu wird jeweils das Signal am Oszilloskop minimiert und die Winkeleinstellung am Goniometer abgelesen. Für jede Probe 
+wird die Messung zweimal durchgeführt, wobei jeweils nach dem ersten Durchgang das Magnetfeld umgepolt wird.
+
+%Auswertung
 \section{Auswertung}
 \subsection{Bestimmung der maximalen magnetischen Flussdichte}
 In Tabelle \ref{tab:atab1} sind die gemessenen Werte für die magnetische Flussdichte zu sehen. 

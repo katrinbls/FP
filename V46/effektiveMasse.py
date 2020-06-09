@@ -39,8 +39,11 @@ plt.clf()
 #Umrechnen der Werte in Radiant
 lam, theta1, theta2 = np.genfromtxt('n-dotiert_1.txt', unpack=True)
 
+
 theta1 = (2*np.pi/(360))*theta1
 theta2 = (2*np.pi/(360))*theta2
+
+
 
 
 #plotten von f(lambda^2)
@@ -131,7 +134,7 @@ plt.clf()
 
 
 #Bestimmung der effektiven Masse
-n = 3.857
+n = 3.354
 B = 396*10**(-3)
 N_1 = 1.2*10**(24)
 N_2 = 2.8*10**(24)

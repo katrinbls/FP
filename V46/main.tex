@@ -54,7 +54,7 @@ Taylorreihe um $k = 0$ entwicklelt, folgt für die effektive Masse $m^{*}$
 mit $i = x, y, z$.
 
 \subsection{Faraday-Rotation}
-Liegt an einem transpartenten Medium ein Magnetfeld an, so dreht
+Liegt an einem transparenten Medium ein Magnetfeld an, so dreht
 sich die Polarisationsebene einer linear polarisierten Welle beim Durchgang durch das Medium, sofern das Magnetfeld
 parallel zur Ausbreitungsrichtung der Welle liegt. Dieser magnetooptische Effekt ist die Faraday-Rotation.
 
@@ -69,7 +69,7 @@ und entgegengesetzer Umlaufrichtung betrachtet werden.
 \end{figure}
 \FloatBarrier
 \noindent
-Die linerar polarisierte Welle $E(z)$ wird nun in eine rechts- und linkszirkular polarisierte Welle mit Ausbreitung in 
+Die linear polarisierte Welle $E(z)$ wird nun in eine rechts- und linkszirkular polarisierte Welle mit Ausbreitung in 
 $\vec{z}$-Richtung zerlegt
 \begin{equation*}
     E(z) = \frac{E_\text{R}\left(z\right) + E_\text{L}\left(z\right)}{2} \, ,
@@ -78,7 +78,7 @@ sodass für Wellenzahlen $k_R \neq k_L$ für die Anteile gilt
 \begin{align*}
     E_R (z) = \left(E_0 \vec{x_0} - i E_0 \vec{y_0}\right) \text{e}^{i k_R z} && E_L (z) = \left(E_0 \vec{x_0} + i E_0 \vec{y_0}\right) \text{e}^{i k_L z} \, .
 \end{align*}
-Beim Einfall in das Medium bei $z = 0$ ist die Polatisation der Welle dann parallel zur $\vec{x}$-Richtung mit $E(0) = E_0 \vec{x_0}$.
+Beim Einfall in das Medium bei $z = 0$ ist die Polarisation der Welle dann parallel zur $\vec{x}$-Richtung mit $E(0) = E_0 \vec{x_0}$.
 Mit einigen Umformungen folgt für den Drehwinkel
 \begin{equation*}
     \theta = \frac{L \omega}{2} \left(\frac{1}{v_{Ph_R}} - \frac{1}{v_{Ph_L}}\right) \, ,
@@ -124,7 +124,7 @@ Der Tensor hat dann die Form
     \chi
     = \begin{pmatrix}
         \chi_{xx} & i \, \chi_{xy} & 0 \\
-        - i \, \chi_{yx} & \chi_{yy} & 0 \\
+        - i \, \chi_{xy} & \chi_{yy} & 0 \\
         0 & 0 & \chi_{zz}
     \end{pmatrix} \, .
 \end{equation}
@@ -151,7 +151,7 @@ bei $\chi_{xy} = 0$ sind. Für die Feldstärkekomponenten der durchlaufenden Wel
 was zeigt, dass die linkszirkular und rechtszirkular polarisierte Welle verschiedene Phasengeschwindigkeiten haben, 
 sodass die Polarisationsrichtung der Welle beim Durchgang durch das Medium gedreht wird. Der Drehwinkel $\theta$ ist dann
 \begin{equation*}
-    \theta = \frac{L}{2} \left(k_{x} - k_{-}\right) \, .
+    \theta = \frac{L}{2} \left(k_{+} - k_{-}\right) \, .
 \end{equation*}
 Da $\chi_{xy}$ klein gegen $1 + \chi_{xx}$ ist gilt dann näherungsweise
 \begin{equation*}
@@ -201,7 +201,7 @@ der Wellenlänge $\lambda$
 Im Grenzfall $\omega_0 \rightarrow 0$ folgt mit der effektiven Masse $m^{*}$ für quasifreie Elektronen
 \begin{equation}
     \label{eq:Winkel}
-    \theta_\textit{frei} = \frac{e_0^3}{8 \pi^2 e_0 c^3} \frac{\lambda^2}{\left(m^{*}\right)^2} \frac{N B}{n} \, .
+    \theta_\textit{frei} = \frac{e_0^3}{8 \pi^2 e_0 c^3} \frac{\lambda^2}{\left(m^{*}\right)^2} \frac{N B L}{n} \, .
 \end{equation}
 
 \section{Aufbau}
@@ -216,20 +216,20 @@ Der in diesem Versuch verwendete Aufbau ist in Abbildung \ref{fig:aufbau} darges
 \FloatBarrier
 \noindent
 Eine Halogenlampe emittiert Licht im nahen Infrarot-Bereich. Dieses Licht durchläuft eine Sammellinse und einen 
-Lichtzerhacker, der das einfallende Licht in Impulse zerhackt. Das Licht trifft dann auf das Glan-Thomson-Prisma aus
-Kalkspat, wodurch es linear polarsiert wird. Hier ist außerdem ein Goniometer zur Messung der Winkelstellung integriert. 
+Lichtzerhacker, der das einfallende Licht in Impulse zerhackt. Das Licht trifft dann auf das Glan-Thompson-Prisma aus
+Kalkspat, wodurch es linear polarisiert wird. Hier ist außerdem ein Goniometer zur Messung der Winkelstellung integriert. 
 Die scheibenförmige Probe befindet sich in der Symmetrieebene eines Elektromagneten, das mit einem Konstantstromgerät 
-ein zeitlich konstantes Magnetfeld erzeugt. Hinter dem Magent befindet sich ein Interferenzfilter und ein zweites 
-Glan-Thomson-Prisma, welches das einfallende Licht in zwei senktrecht zueinander polarisierte Strahlenbündel aufteilt,
+ein zeitlich konstantes Magnetfeld erzeugt. Hinter dem Magnet befindet sich ein Interferenzfilter und ein zweites 
+Glan-Thompson-Prisma, welches das einfallende Licht in zwei senkrecht zueinander polarisierte Strahlenbündel aufteilt,
 die jeweils eine Sammellinse passieren und dann auf einen Photowiderstand aus Bleisulfid treffen, der die Lichtintensität misst. 
 Die Photowiderstände sind an einen Differenzverstärker angeschlossen, der über einen Selektivverstärker mit
 einem Oszilloskop verbunden ist. Die Ausgangsspannung des Differenzverstärkers ist proportional zur Differenz der 
-Eingangsspannungen und verschwindet, sobal diese übereinstimmen, sodass das Oszilloskop als Nulldetektor genutzt wird.
+Eingangsspannungen und verschwindet, sobald diese übereinstimmen, sodass das Oszilloskop als Nulldetektor genutzt wird.
 
 \section{Durchführung}
 Vor Beginn der Messung wird die Apparatur justiert. Außerdem wird mit der Probe und einem Interferenzfilter mit 
-$1,06 \si{\micro \meter}$ überprüft, ob durch Drehen des Polarisators eine Signalamplitude von fast Null erreicht wird 
-und ob nach eienr Drehung der Polarisators um etwa 90° ein weiteres Minimum aufritt.
+$1,06\, \si{\micro \meter}$ überprüft, ob durch Drehen des Polarisators eine Signalamplitude von fast Null erreicht wird 
+und ob nach einer Drehung der Polarisators um etwa 90° ein weiteres Minimum aufritt.
 Zuerst wird mit einer Hallsonde bei maximaler Stromstärke die magnetische Flussdichte $B(z)$ in Abhängigkeit vom 
 Abstand $z$ gemessen. Zuerst wird dazu nach dem Maximum von $B(z)$ gesucht und dann um das Maximum herum mit Werten 
 von $z = 100 \si{\milli\meter}$ bis $z = 127 \si{\milli\meter}$ die magnetische Flussdichte gemessen.
@@ -365,7 +365,7 @@ aufgetragen, wie in den Abbildungen \ref{fig:afig2}, \ref{fig:afig3} und \ref{fi
     \label{tab:atab4}
     \begin{tabular}{c c c}
         \toprule
-        {$\theta_{\symup{Probe\,1}}/(10^{-5}\,\si{\micro\meter})$} & {$\theta_{\symup{Probe\,2}}/(10^{-5}\,\si{\micro\meter})$} & {$\theta_{\symup{Probe\,3}}/(10^{-5}\,\si{\micro\meter})$}\\
+        {$\theta_{\symup{Probe\,1}}/(10^{-5}\,\si{\micro\meter}^{-1})$} & {$\theta_{\symup{Probe\,2}}/(10^{-5}\,\si{\micro\meter}^{-1})$} & {$\theta_{\symup{Probe\,3}}/(10^{-5}\,\si{\micro\meter}^{-1})$}\\
         \midrule
         4,03  & 6,20   &  6,28 \\
         2,73  & 4,70   &  4,55 \\
@@ -447,7 +447,7 @@ $\lambda^2$ wird eine Ausgleichrechnung
     \theta_{\symup{frei}}(\lambda^2) = a\cdot \lambda ^2
 \end{equation*}
 durchgeführt.
-Für diese ergeben sich die Proportianilitätsfaktoren
+Für diese ergeben sich die Proportionalitätsfaktoren
 \begin{align*}
     a_1 &= (4,196 \pm 0,003)10^{-5}\, \si{\micro\meter}^{-3}\\
     a_2 &= (1,127 \pm 0,004)10^{-5}\, \si{\micro\meter}^{-3} \qquad .
@@ -457,13 +457,13 @@ Der Zusammenhang zwischen dem Rotationswinkel $\theta_{\symup{frei}}$ und der We
 gegeben, woraus sich mittels Koeffizientenvergleich für den Proportionalitätsfaktor der Zusammenhang \ref{eq:Prop} ergibt. Durch Umstellen der Gleichung \ref{eq:Prop} ergibt
 sich der Ausdruck, mit welchem die effektive Masse berechnet werden kann
 \begin{align}
-   a &= \frac{e_0^3 \, N \, B}{8 \pi \epsilon_0 c^3 n (m^{*})^2}\\ \label{eq:Prop}
-   \Leftrightarrow\qquad m &= \sqrt{\frac{e_0^3 \, N \, B}{8 \pi \epsilon_0 c^3 n a}} \, .
+   a &= \frac{e_0^3 \, N \, B}{8 \pi^2 \epsilon_0 c^3 n (m^{*})^2}\\ \label{eq:Prop}
+   \Leftrightarrow\qquad m &= \sqrt{\frac{e_0^3 \, N \, B}{8 \pi^2 \epsilon_0 c^3 n a}} \, .
 \end{align}
-Zur Berechnung der effektiven Masse wird für den Brechungsindex der Literaturwert $n=3,857$ \cite{quelle04} verwendet. Somit folgen für die effektive Masse die beiden Werte
+Zur Berechnung der effektiven Masse wird für den Brechungsindex der Literaturwert $n=3,354$ bei $\lambda = 1,77 \si{\micro\meter}$ \cite{quelle04} verwendet. Somit folgen für die effektive Masse die beiden Werte
 \begin{align*}
-    m_1^{*} &= (0,02780 \pm 0.0001)\cdot m_e \\
-    m_2^{*} &= (0.08192 \pm 0.0016)\cdot m_e \qquad .
+    m_1^{*} &= (0,0298 \pm 0.0011)\cdot m_e \\
+    m_2^{*} &= (0.0879 \pm 0.0017)\cdot m_e \qquad .
 \end{align*}
 
 \section{Diskussion}
@@ -477,13 +477,13 @@ Der Verlauf der Messwerte in Abbildung \ref{fig:afig3} und \ref{fig:afig4} kann 
 Jedoch sollte der Rotationswinkel des Faraday-Effekts, wenn der Einfluss der freien Elektronen isoliert wird, proportional zu $\lambda^2$ sein. Dieses Verhalten ist in den Abbildungen \ref{fig:afig5} und \ref{fig:afig6} nur begrenzt zu beobachten, wobei die Ergebnisse der stärker dotierten Probe
 bis auf einen Ausreißer, annähernd den erwarteten linearen Verlauf zeigen.
 
-Das Ergebnisse der Bestimmung der effektive Masse der Leitungselektronen in Galliumarsenid sidn
+Das Ergebnisse der Bestimmung der effektive Masse der Leitungselektronen in Galliumarsenid sind
 \begin{align*}
-    m_1^{*} &= (0,02780 \pm 0.0010)\cdot m_e \\
-    m_2^{*} &= (0.08192 \pm 0.0016)\cdot m_e \qquad .
+    m_1^{*} &= (0,0298 \pm 0.0011)\cdot m_e \\
+    m_2^{*} &= (0.0879 \pm 0.0017)\cdot m_e \qquad .
 \end{align*}
-Verglichen mit dem Literaturwert für die effektive Masse der Leitungsbandelektronen im Halbleiter Galliumarsenid $m=0,063\, m_e$ \cite{quelle05} weist der erste Wert eine Abweichung von circa $55\%$ auf, während der zweite Wert
-mit einer Abweichung von circa $30\%$ dem Literaturwert deutlich näher kommt. Der Mittelwert der beiden Ergebnisse $\bar{m} = (0,05486 \pm 0.0005)\cdot m_e$ weicht jedoch um nur $13\%$ vom Literaturwert ab. 
+Verglichen mit dem Literaturwert für die effektive Masse der Leitungsbandelektronen im Halbleiter Galliumarsenid $m=0,063\, m_e$ \cite{quelle05} weist der erste Wert eine Abweichung von circa $52\%$ auf, während der zweite Wert
+mit einer Abweichung von circa $40\%$ dem Literaturwert etwas näher kommt. Der Mittelwert der beiden Ergebnisse $\bar{m} = (0,05885 \pm 0.0005)\cdot m_e$ weicht jedoch um nur $6\%$ vom Literaturwert ab. 
 
 Zusammenfassend sind die Ergebnisse besser als der Verlauf der Messdaten zu Beginn vermuten lässt. Trotzdem sollte erwähnt werden, dass systematische Fehler dieses Experiment beinflusst haben. So war es zum Beispiel sehr schwierig, die Apparatur genau zu justieren, was sich bereits dadurch zeigte, dass die Winkel, bei dem der
 Nullabgleich erreicht war, keinen $90°$-periodischen Verlauf zeigten, sondern eher $100°$-periodisch waren. Außerdem ist der Brechungsindex $n$, welche für die Berechnung der effektiven Masse $m^{*}$ benötigt wurde, ebenfalls abhängig von der Wellenlänge. Dieser wurde in diesem Experiment aber als konstant angenommen.

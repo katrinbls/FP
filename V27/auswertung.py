@@ -13,11 +13,12 @@ rc('text', usetex=True)
 def f(x, a, b, c, d):
     return a*x**3 + b*x**2 + c*x + d
 
-y, x = np.genfromtxt('feld.txt', unpack=True)
+y_1, x_1 = np.genfromtxt('feld.txt', unpack=True)
+y_2 = np.array([51.2, 95.9, 144.2, 189.8, 230.8, 277.5, 316.7, 354.9, 388.4, 414.5])
+x_2 = np.array([0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5])
 
-params, covariance_matrix = curve_fit(f, x, y)
+params, covariance_matrix = curve_fit(f, x_1, y_1)
 errors = np.sqrt(np.diag(covariance_matrix))
-
 
 x_plot = np.linspace(0.5, 5)
 
@@ -26,17 +27,35 @@ print('b =', params[1], '±', errors[1])
 print('c =', params[2], '±', errors[2])
 print('d =', params[3], '±', errors[3])
 
-plt.plot(x, y, 'g+', label=r'Messwerte')
+plt.subplot(2, 1, 1)
+plt.plot(x_1, y_1, 'g+', label=r'Messwerte')
 plt.plot(x_plot, f(x_plot, *params), label='Fit', linewidth=1)
-plt.savefig('magnetfeld.pdf')
+plt.savefig('magnetfeld_auf.pdf')
 plt.ylabel(r'$B/mT$')
 plt.xlabel(r'$I/A$')
 plt.legend(loc="best")
 plt.grid()
-#plt.show()
+
+params, covariance_matrix = curve_fit(f, x_2, y_2)
+errors = np.sqrt(np.diag(covariance_matrix))
+
+print('a =', params[0], '±', errors[0])
+print('b =', params[1], '±', errors[1])
+print('c =', params[2], '±', errors[2])
+print('d =', params[3], '±', errors[3])
+
+plt.subplot(2, 1, 2)
+plt.plot(x_2, y_2, '+', color='orangered', label=r'Messwerte')
+plt.plot(x_plot, f(x_plot, *params), label='Fit', linewidth=1)
+plt.savefig('magnetfeld_ab.pdf')
+plt.ylabel(r'$B/mT$')
+plt.xlabel(r'$I/A$')
+plt.legend(loc="best")
+plt.grid()
+plt.tight_layout()
+plt.show()
 
 #Dispersionsgebiet
-
 mu_b = const.physical_constants['Bohr magneton'][0]
 planck = const.physical_constants['Planck constant'][0]
 einstein = const.physical_constants['speed of light in vacuum'][0]

@@ -112,7 +112,7 @@ und somit ergeben sich $2J+1$ äquidistante Energieniveaus, wie in Abbildung \re
 
 \begin{figure}
 \centering
-\includegraphics[height=5.0cm]{zeeman-effekt_2.pdf}
+%\includegraphics[height=5.0cm]{zeeman-effekt_2.pdf}
 \caption{Die Aufspaltung der Energieniveaus in einem homogenen Magnetfeld für $J=2$. Hier entspricht $l=J$ und $m_l=m$ \cite{quelle04}.}
 \label{fig:tfig2}
 \end{figure}
@@ -125,6 +125,7 @@ beobachtet werden. Für $\Delta m = \pm 1$ ist die emittierte Strahlung zirkular
 \subsubsection*{Der normale Zeeman-Effekt}
 Der normale Zeeman-Effekt beschreibt die Aufspaltung der Spektrallinien für Atome mit der Spinquantenzahl $S=0$. Somit ist der Gesamdrehimpuls gleich dem Gesamtbahndrehimpuls und für den Lande-Faktor ergibt sich $g_J=1$. Die Energieaufspaltung
 \begin{equation}
+    \label{eq:energie}
 \Delta E = m \mu_\text{B}B
 \end{equation}
 ist also unabhängig von den Quantenzahlen $L$ und $J$. In Abbildung \ref{fig:tfig3} ist die Aufspaltung der Energieniveaus und die im vorherigen Abschnitt behandelten Übergänge zwischen diesen dargestellt.
@@ -206,9 +207,267 @@ im Energiespektrum sichtbar sind.
 Anschließend wird die Apparatur erneut justiert, sodass nun ein blauer Lichtstrahl auf die Lummer-Gehrke Platte trifft und die Prozedur wiederholt.
 
 \section{Auswertung}
-\subsection{Eichung des Magneten}
+\subsection{Magnetfeldmessung}
+Die gemessenen Werte der Magnetfeldstärke sind in Tabelle \ref{tab:atab1} dargestellt.
+\FloatBarrier
+\begin{table}[h]
+    \centering
+    \caption{Messwerte der Magnetfeldstärke in Abhängigkeit von der Stromstärke.}
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \label{tab:atab1}
+        \begin{tabular}{c c}
+            \toprule
+            {$I / A$} & {$B / \text{mT}$} \\
+            \midrule
+            0.5 & 46    \\ 
+            1   & 92    \\
+            1.5 & 137.5 \\
+            2   & 183.1 \\
+            2.5 & 223.0 \\
+            3   & 268.7 \\
+            3.5 & 306.8 \\
+            4   & 345.0 \\
+            4.5 & 377.3 \\
+            5   & 408.9 \\
+            \bottomrule
+        \end{tabular}
+    \end{minipage} \hfill%
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \begin{tabular}{c c}
+            \toprule
+            {$I / A$} & {$B / \text{mT}$} \\
+            \midrule
+            5   & 414.5 \\
+            4.5 & 388.4 \\
+            4   & 354.9 \\
+            3.5 & 316.7 \\
+            3   & 277.5 \\
+            2.5 & 230.8 \\
+            2   & 189.8 \\
+            1.5 & 144.2 \\
+            1   & 95.9  \\
+            0.5 & 51.2  \\
+            \bottomrule
+        \end{tabular}
+    \end{minipage}
+\end{table}
+\FloatBarrier
+\noindent
+In Abbildung \ref{fig:afig1} sind die Werte grafisch dargestellt. Mit dem Paket $\texttt{SciPy.optimize.curve\_fit}$ wird außerdem 
+eine Ausgleichsrechnung durchgeführt, wobei als Funktion ein Polynom dritten Grades verwendet wird
+\begin{equation*}
+    f \left(x\right) = a x^3 +b x^2 +c x +d \,
+\end{equation*}
+\FloatBarrier
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{magnetfeld.pdf}
+    \caption{Messwerte der Magentfeldstärke in Abhängigkeit von der angelegten Stromstäke und Ausgleichskurve.}
+    \label{fig:afig1}
+\end{figure}
+\FloatBarrier
+\subsection{Rote Spektrallinie}
+Mit der roten Spektrallinie wird der normale Zeeman-Effekt untersucht, weswegen nur die $\sigma$-Komponente betrachtet wird.
+Die Aufnahmen bei $B = 0$ (oberes Bild) und $B \neq 0$ (unteres Bild) sind in Abbildung \ref{fig:afig2} dargestellt.
+\FloatBarrier
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{rot.jpg}
+    \caption{Aufnahmen mit rotem Licht bei ein- und ausgeschaltetem Magnetfeld.}
+    \label{fig:afig2}
+\end{figure}
+\FloatBarrier
+Zur Berechnung der Aufspaltung $\delta \lambda$ wird in der Aufnahme mit ausgeschaltetem Magentfeld \ref{fig:afig2} der 
+Abstand der Spektrallinien $\Delta s$ bestimmt. Die Verschiebung $\delta s$ wird in der Aufnahme mit eingeschaltetem 
+Magentfeld mit Magentfeldstärke $B = 421.3 \,\si{\milli\tesla}$ vermessen. Die Messung erfolgt in Pixeln (px).
+Die Aufspaltung $\delta \lambda$ berechnet 
+sich dann durch
+\begin{equation}
+    \label{eq:Auswertung}
+    \delta \lambda = \frac{1}{2} \frac{\delta s}{\Delta s} \Delta \lambda_D \,
+\end{equation}
+wobei der Wert für $\lambda_D$ aus Tabelle \ref{tab:atab0} entnommen wird. 
+Diese gemessenen Werte für $\delta s$ und $\Delta s$ sowie jeweils der berechnete Wert für $\delta \lambda$ sind in Tabelle \ref{tab:tab2} dargestellt.
+\FloatBarrier
+\begin{table}[h]
+    \centering
+    \caption{Messwerte der Abstände der Speltrallinien $\Delta s$ und der Verschiebung $\delta s$ sowie berechnete Auspaltung $\delta \lambda$.}
+    \label{tab:atab2}
+    \begin{tabular}{c c c}
+        \toprule
+        {$\Delta s / \text{px}$} & {$\delta s / \text{px}$} & {$\delta \lambda / \si{\meter}^{-11}$}\\
+        \midrule
+        15 & 5 & 0.8152 \\ 
+        14 & 5 & 0.8734 \\
+        15 & 6 & 0.9782 \\
+        14 & 6 & 1.0481 \\
+        16 & 6 & 0.9171 \\
+        15 & 6 & 0.9782 \\
+        16 & 6 & 0.9171 \\ 
+        16 & 6 & 0.9171 \\
+        17 & 6 & 0.8631 \\ 
+        17 & 7 & 1.0070 \\ 
+        17 & 7 & 1.0070 \\
+        18 & 7 & 0.9510 \\
+        19 & 7 & 0.9010 \\
+        19 & 8 & 1.0297 \\
+        20 & 8 & 0.9782 \\
+        21 & 8 & 0.9316 \\
+        21 & 8 & 0.9316 \\
+        23 & 9 & 0.9569 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+\FloatBarrier
+\noindent
+Es wird nun mit dem $\texttt{Python}$-Paket $\texttt{NumPy}$ der Mittelwert aus allen
+berechneten Werten für $\delta \lambda$ bestimmt. Der Fehler berechent sich hierbei nach Gauß'scher Fehlerfortpflanzung,
+die ebenfalls mit dem Paket $\texttt{NumPy}$ durchgeführt wird. Es ergibt sich der Wert
+\begin{equation*}
+    \delta \lambda = \SI{0.9445(0143)e-11}{\meter}
+\end{equation*}
+Zur Berechnung des Landé-Faktors $g$ muss außerdem die Energiedifferenz $\Delta E$ bestimmt werden, wozu die Energie
+\begin{equation*}
+    E = \frac{\text{hc}}{\lambda}
+\end{equation*} 
+um kleine Änderungen der Wellenlänge $\Delta \lambda$ in erster Ordnung entwickelt wird. Es ergibt sich
+\begin{equation*}
+    \Delta E = \frac{\text{h c}}{\lambda^2} \Delta \lambda
+\end{equation*}
+Mit Gleichung \eqref{eq:energie} folgt dann für den Landé-Faktor die Formel 
+\begin{equation} 
+    \label{eq:landee}
+    g = \frac{\text{h c}}{\lambda^2 B \mu_B} \Delta \lambda
+\end{equation}
+mit der sich für den Landé-Faktor der Wert
+\begin{equation*}
+    g = 1.159\pm 0.018
+\end{equation*}
+ergibt.
 
+\subsection{Blaue Spektrallinie}
+Die Vorgehensweise bei der Untersuchung der blauen Spektrallinie erfolgt analog, jedoch wird nun der anomale Zeeman-Effekt
+untersucht, weswegen sowohl die $\sigma$- als auch die $\pi$-Linie betrachtet wird. 
+Die Aufnahmen bei $B = 0$ (oberes Bild) und $B \neq 0$ (unteres Bild) sind in Abbildung \ref{fig:afig3} dargestellt.
+\FloatBarrier
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{pi.jpg}
+    \caption{Aufnahmen der $\pi$-Linie mit blauem Licht bei ein- und ausgeschaltetem Magnetfeld.}
+    \label{fig:afig3}
+\end{figure}
+\FloatBarrier
+\subsubsection*{$\pi$-Linie}
+Die $\pi$-Linie wird bei einem Magnetfeld von $B = 1009 \, \si{\milli\tesla}$ vermessen.
+Die gemessenen Werte für 
+$\delta s$ und $\Delta s$ sowie jeweils der berechnete Wert für $\delta \lambda$ sind in Tabelle \ref{tab:atab3} dargestellt.
+\FloatBarrier
+\begin{table}[h]
+    \centering
+    \caption{Messwerte der Abstände der Speltrallinien $\Delta s$ und der Verschiebung $\delta s$ sowie berechnete Auspaltung $\delta \lambda$ für die $\pi$-Linie.}
+    \label{tab:atab3}
+    \begin{tabular}{c c c}
+        \toprule
+        {$\Delta s / \text{px}$} & {$\delta s / \text{px}$} & {$\delta \lambda / \si{\meter}^{-11}$}\\
+        \midrule
+        116 & 74 & 0.8596 \\
+        114 & 64 & 0.7565 \\
+        111 & 58 & 0.7041 \\
+        107 & 56 & 0.7052 \\
+        104 & 51 & 0.6608 \\
+        99  & 51 & 0.6942 \\
+        97  & 48 & 0.6668 \\
+        94  & 48 & 0.6881 \\
+        92  & 49 & 0.7177 \\
+        90  & 48 & 0.7187 \\
+        87  & 50 & 0.7744 \\
+        86  & 48 & 0.7521 \\
+        83  & 49 & 0.7955 \\
+        82  & 48 & 0.7888 \\
+        81  & 46 & 0.7652 \\
+        79  & 45 & 0.7676 \\
+        76  & 44 & 0.7801 \\
+        76  & 43 & 0.7624 \\
+        75  & 42 & 0.7546 \\
+        74  & 41 & 0.7466 \\
+        71  & 42 & 0.7971 \\
+        70  & 40 & 0.7700 \\
+        70  & 38 & 0.7315 \\
+        69  & 37 & 0.7226 \\
+        66  & 39 & 0.7963 \\
+        68  & 40 & 0.7926 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+\FloatBarrier
+\noindent
+Als Mittelwert ergibt sich
+\begin{equation*}
+    \delta \lambda = \SI{0.7488(0091)e-11}{\meter} \, .
+\end{equation*}
+Mit der obigen Formel \eqref{eq:landee} ergibt sich für den Landé-Faktor
+\begin{equation*}
+    g = 0.680 \pm 0.008 \, .
+\end{equation*}
 
+\subsubsection*{$\sigma$-Linie}
+Aus den Aufnahmen in \ref{fig:afig4} für $B = 0$ (oberes Bild) und $B \neq 0$ (unteres Bild)
+\FloatBarrier
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{sigma.jpg}
+    \caption{Aufnahmen der $\sigma$-Linie mit blauem Licht bei ein- und ausgeschaltetem Magnetfeld.}
+    \label{fig:afig4}
+\end{figure}
+\FloatBarrier
+Die für die $\sigma$-Linie bei $B = 306.8 \, \si{\milli\tesla}$ bestimmten Werte sind in Tabelle \ref{tab:atab4} dergestellt.
+\FloatBarrier
+\begin{table}[h]
+    \centering
+    \caption{Messwerte der Abstände der Speltrallinien $\Delta s$ und der Verschiebung $\delta s$ sowie berechnete Auspaltung $\delta \lambda$ für die $\sigma$-Linie.}
+    \label{tab:atab4}
+    \begin{tabular}{c c c}
+        \toprule
+        {$\Delta s / \text{px}$} & {$\delta s / \text{px}$} & {$\delta \lambda / \si{\meter}^{-11}$}\\
+        \midrule
+        11 & 6  & 0.7350 \\
+        11 & 6  & 0.7350 \\
+        11 & 6  & 0.7350 \\
+        12 & 6  & 0.6738 \\
+        12 & 6  & 0.6738 \\
+        12 & 6  & 0.6738 \\
+        12 & 6  & 0.6738 \\
+        12 & 6  & 0.6738 \\
+        13 & 6  & 0.6219 \\
+        13 & 7  & 0.7256 \\
+        13 & 7  & 0.7256 \\
+        14 & 7  & 0.6736 \\
+        13 & 7  & 0.7256 \\
+        14 & 7  & 0.6736 \\
+        15 & 7  & 0.6288 \\
+        14 & 7  & 0.6736 \\
+        15 & 8  & 0.7187 \\
+        15 & 8  & 0.7187 \\
+        16 & 8  & 0.6738 \\
+        16 & 8  & 0.6738 \\
+        17 & 9  & 0.7134 \\
+        17 & 10 & 0.7926 \\
+        18 & 9  & 0.6738 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+\FloatBarrier
+\noindent
+Es ergibt sich der Mittelwert
+\begin{equation*}
+    \delta \lambda = \SI{0.6951(0081)e-11}{\meter} \, 
+\end{equation*}
+mit dem sich wieder mit Formel \eqref{eq:landee} der Landé-Faktor ergibt
+\begin{equation*}
+    g = 0.640 \pm 0.007 \, .
+\end{equation*}
 
 
 

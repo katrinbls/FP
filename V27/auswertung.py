@@ -53,7 +53,8 @@ plt.xlabel(r'$I/A$')
 plt.legend(loc="best")
 plt.grid()
 plt.tight_layout()
-plt.show()
+plt.savefig('magnetfeld.pdf')
+#plt.show()
 
 #Dispersionsgebiet
 mu_b = const.physical_constants['Bohr magneton'][0]
@@ -69,10 +70,10 @@ rot_d_s = np.array([5, 5, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9])
 
 lambda_rot = 643.8*10**(-9)
 delta_lambda_d_rot = 4.891*10**(-11)
-A_rot = 209128.5905
 B_rot = 421.3*10**(-3)
 
 delta_lambda_rot = dlambda(delta_lambda_d_rot, rot_d_s, rot_delta_s)
+print(delta_lambda_rot)
 
 print('delta_lambda_rot =', np.mean(delta_lambda_rot), '±', np.std(delta_lambda_rot, ddof=1) / np.sqrt(len(delta_lambda_rot)))
 
@@ -89,6 +90,7 @@ A_blau = 285458.0625
 B_blau = 1009*10**(-3)
 
 delta_lambda_blau = dlambda(delta_lambda_d_blau, blau_d_s, blau_delta_s)
+print(delta_lambda_blau)
 print('delta_lambda_blau =', np.mean(delta_lambda_blau), '±', np.std(delta_lambda_blau, ddof=1) / np.sqrt(len(delta_lambda_blau)))
 
 g_blau = (planck*einstein*delta_lambda_blau)/(mu_b*B_blau*(lambda_blau**2))
@@ -99,6 +101,7 @@ blau_delta_s_sigma = np.array([11, 11, 11, 12, 12, 12, 12, 12, 13, 13, 13, 14, 1
 blau_d_s_sigma = np.array([6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 9, 10, 9])
 
 delta_lambda_blau_sigma = dlambda(delta_lambda_d_blau, blau_d_s_sigma, blau_delta_s_sigma)
+print(delta_lambda_blau_sigma)
 print('delta_lambda_blau_sigma =', np.mean(delta_lambda_blau_sigma), '±', np.std(delta_lambda_blau_sigma, ddof=1) / np.sqrt(len(delta_lambda_blau_sigma)))
 
 g_blau_sigma = (planck*einstein*delta_lambda_blau_sigma)/(mu_b*B_blau*(lambda_blau**2))

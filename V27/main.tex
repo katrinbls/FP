@@ -297,7 +297,7 @@ Die gemessenen Werte der Magnetfeldstärke sind in Tabelle \ref{tab:atab1} darge
         \label{tab:atab1}
         \begin{tabular}{c c}
             \toprule
-            {$I / A$} & {$\Delta \lambda_D / \text{mT}$} \\
+            {$I / A$} & {$B / \text{mT}$} \\
             \midrule
             0.5 & 46    \\ 
             1   & 92    \\
@@ -337,13 +337,13 @@ Die gemessenen Werte der Magnetfeldstärke sind in Tabelle \ref{tab:atab1} darge
 In Abbildung \ref{fig:afig1} sind die Werte grafisch dargestellt. Mit dem Paket $\texttt{SciPy.optimize.curve\_fit}$ wird außerdem 
 eine Ausgleichsrechnung durchgeführt, wobei als Funktion ein Polynom dritten Grades verwendet wird
 \begin{equation*}
-    f \left(x\right) = a x^3 +b x^2 +c x +d \,
+    f \left(x\right) = a x^3 +b x^2 +c x +d \, .
 \end{equation*}
 \FloatBarrier
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{magnetfeld.pdf}
-    \caption{Messwerte der Magentfeldstärke in Abhängigkeit von der angelegten Stromstäke und Ausgleichskurve.}
+    \caption{Messwerte der Magnetfeldstärke in Abhängigkeit von der angelegten Stromstärke und Ausgleichskurve.}
     \label{fig:afig1}
 \end{figure}
 \FloatBarrier
@@ -358,9 +358,9 @@ Die Aufnahmen bei $B = 0$ (oberes Bild) und $B \neq 0$ (unteres Bild) sind in Ab
     \label{fig:afig2}
 \end{figure}
 \FloatBarrier
-Zur Berechnung der Aufspaltung $\delta \lambda$ wird in der Aufnahme mit ausgeschaltetem Magentfeld \ref{fig:afig2} der 
+Zur Berechnung der Aufspaltung $\delta \lambda$ wird in der Aufnahme mit ausgeschaltetem Magnetfeld \ref{fig:afig2} der 
 Abstand der Spektrallinien $\Delta s$ bestimmt. Die Verschiebung $\delta s$ wird in der Aufnahme mit eingeschaltetem 
-Magentfeld mit Magentfeldstärke $B = 421.3 \,\si{\milli\tesla}$ vermessen. Die Messung erfolgt in Pixeln (px).
+Magnetfeld mit Magnetfeldstärke $B = 421.3 \,\si{\milli\tesla}$ vermessen. Die Messung erfolgt in Pixeln (px).
 Die Aufspaltung $\delta \lambda$ berechnet 
 sich dann durch
 \begin{equation}
@@ -368,11 +368,11 @@ sich dann durch
     \delta \lambda = \frac{1}{2} \frac{\delta s}{\Delta s} \Delta \lambda_D \,
 \end{equation}
 wobei der Wert für $\lambda_D$ aus Tabelle \ref{tab:atab0} entnommen wird. 
-Diese gemessenen Werte für $\delta s$ und $\Delta s$ sowie jeweils der berechnete Wert für $\delta \lambda$ sind in Tabelle \ref{tab:tab2} dargestellt.
+Diese gemessenen Werte für $\delta s$ und $\Delta s$ sowie jeweils der berechnete Wert für $\delta \lambda$ sind in Tabelle \ref{tab:atab2} dargestellt.
 \FloatBarrier
 \begin{table}[h]
     \centering
-    \caption{Messwerte der Abstände der Speltrallinien $\Delta s$ und der Verschiebung $\delta s$ sowie berechnete Auspaltung $\delta \lambda$.}
+    \caption{Messwerte der Abstände der Spektrallinien $\Delta s$ und der Verschiebung $\delta s$ sowie berechnete Aufspaltung $\delta \lambda$.}
     \label{tab:atab2}
     \begin{tabular}{c c c}
         \toprule
@@ -402,7 +402,7 @@ Diese gemessenen Werte für $\delta s$ und $\Delta s$ sowie jeweils der berechne
 \FloatBarrier
 \noindent
 Es wird nun mit dem $\texttt{Python}$-Paket $\texttt{NumPy}$ der Mittelwert aus allen
-berechneten Werten für $\delta \lambda$ bestimmt. Der Fehler berechent sich hierbei nach Gauß'scher Fehlerfortpflanzung,
+berechneten Werten für $\delta \lambda$ bestimmt. Der Fehler berechnet sich hierbei nach Gauß'scher Fehlerfortpflanzung,
 die ebenfalls mit dem Paket $\texttt{NumPy}$ durchgeführt wird. Es ergibt sich der Wert
 \begin{equation*}
     \delta \lambda = \SI{0.9445(0143)e-11}{\meter}
@@ -413,12 +413,12 @@ Zur Berechnung des Landé-Faktors $g$ muss außerdem die Energiedifferenz $\Delt
 \end{equation*} 
 um kleine Änderungen der Wellenlänge $\Delta \lambda$ in erster Ordnung entwickelt wird. Es ergibt sich
 \begin{equation*}
-    \Delta E = \frac{\text{h c}}{\lambda^2} \Delta \lambda
+    \Delta E = \frac{\text{hc}}{\lambda^2} \Delta \lambda \, .
 \end{equation*}
 Mit Gleichung \eqref{eq:energie} folgt dann für den Landé-Faktor die Formel 
 \begin{equation} 
     \label{eq:landee}
-    g = \frac{\text{h c}}{\lambda^2 B \mu_B} \Delta \lambda
+    g = \frac{\text{hc}}{\lambda^2 B \mu_B} \Delta \lambda
 \end{equation}
 mit der sich für den Landé-Faktor der Wert
 \begin{equation*}
@@ -445,7 +445,7 @@ $\delta s$ und $\Delta s$ sowie jeweils der berechnete Wert für $\delta \lambda
 \FloatBarrier
 \begin{table}[h]
     \centering
-    \caption{Messwerte der Abstände der Speltrallinien $\Delta s$ und der Verschiebung $\delta s$ sowie berechnete Auspaltung $\delta \lambda$ für die $\pi$-Linie.}
+    \caption{Messwerte der Abstände der Spektrallinien $\Delta s$ und der Verschiebung $\delta s$ sowie berechnete Aufspaltung $\delta \lambda$ für die $\pi$-Linie.}
     \label{tab:atab3}
     \begin{tabular}{c c c}
         \toprule
@@ -492,7 +492,8 @@ Mit der obigen Formel \eqref{eq:landee} ergibt sich für den Landé-Faktor
 \end{equation*}
 
 \subsubsection*{$\sigma$-Linie}
-Aus den Aufnahmen in \ref{fig:afig4} für $B = 0$ (oberes Bild) und $B \neq 0$ (unteres Bild)
+In Abbildung \ref{fig:afig4} für $B = 0$ (oberes Bild) und $B \neq 0$ (unteres Bild) befinden sich die Aufnahmen bei
+bei $B = 0$ (oberes Bild) und $B \neq 0$ (unteres Bild)
 \FloatBarrier
 \begin{figure}
     \centering
@@ -505,7 +506,7 @@ Die für die $\sigma$-Linie bei $B = 306.8 \, \si{\milli\tesla}$ bestimmten Wert
 \FloatBarrier
 \begin{table}[h]
     \centering
-    \caption{Messwerte der Abstände der Speltrallinien $\Delta s$ und der Verschiebung $\delta s$ sowie berechnete Auspaltung $\delta \lambda$ für die $\sigma$-Linie.}
+    \caption{Messwerte der Abstände der Spektrallinien $\Delta s$ und der Verschiebung $\delta s$ sowie berechnete Aufspaltung $\delta \lambda$ für die $\sigma$-Linie.}
     \label{tab:atab4}
     \begin{tabular}{c c c}
         \toprule
@@ -545,10 +546,40 @@ Es ergibt sich der Mittelwert
 \end{equation*}
 mit dem sich wieder mit Formel \eqref{eq:landee} der Landé-Faktor ergibt
 \begin{equation*}
-    g = 0.640 \pm 0.007 \, .
+    g = 2.106 \pm 0.025 \, .
 \end{equation*}
 
+\section{Diskussion}
+Zum Vergleich der experimentellen Ergebnisse mit den berechneten Theoriewerten sind diese Werte sowie die relative 
+Abweichung in Tabelle \ref{tab:distab1} angegeben.
+\FloatBarrier
+\begin{table}[h]
+    \centering
+    \caption{Berechnete und experimentell bestimmte Werte der Landé-Faktoren sowie die relative Abweichung der Werte.}
+    \label{tab:distab1}
+    \begin{tabular}{l c c c}
+        \toprule
+        {$\text{Linie}$} & {$g_\text{Theorie}$} & {$g_\text{Experiment}$} & {$\text{Abweichung}\, / \%$}\\
+        \midrule
+        {$\text{rot}$}          & 1    & 1.159 \pm 0.018 & 15.9 \\
+        {$\text{blau:}\, \pi$}    & 0.5  & 0.640 \pm 0.007 & 28.0 \\
+        {$\text{blau:}\, \sigma$} & 1.75 & 2.106 \pm 0.025 & 20.3 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+\FloatBarrier
+\noindent
+Hierbei ist zu beachten, dass es für die $\sigma$-Linie zwei Werte für $g_j$ gibt, $g_j = 1.5$ und $g_j = 2$, die jedoch experimentell nicht 
+auflösbar sind. Als Theoriewert wird daher hier der Mittelwert dieser Werte verwendet. 
 
+Offenbar weicht der experimentell bestimmte Wert trotz der hohen spektralen Auflösung der Lummer-Gehrcke-Platte
+in allen Fällen deutlich vom theoretischen Wert ab. Dies lässt sich 
+dadurch erklären, dass es aufgrund der niedrigen Auflösung der Aufnahmen sehr schwierig war, die Abstände $\Delta s$ und
+die Verschiebung $\delta s$ zu messen. Weiterhin konnten für die Messung nur Stromstärken von 0 bis $5 \, \si{\ampere}$
+verwendet werden. Eine weitere Fehlerquelle sind auch die gemessenen Werte des Magnetfelds, da diese nicht genau 
+an der Position der Cadmium-Lampe gemessen werden konnten. Desweiteren ist auch ein systematischer Fehler nicht auszuschließen,
+aufgrund der beschriebenen Fehlerquellen ist aber zu vermuten, dass die Abweichungen mit Aufnahmen mit höherer Auflösung
+und einer noch genaueren Messung des Magnetfeldes deutlich verkleinert werden könnten.
 
 \nocite{wingate}
 \nocite{*}

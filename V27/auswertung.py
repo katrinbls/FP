@@ -87,7 +87,7 @@ blau_d_s = np.array([74, 64, 58, 56, 51, 51, 48, 48, 49, 48, 50, 48, 49, 48, 46,
 lambda_blau = 480*10**(-9)
 delta_lambda_d_blau = 2.695*10**(-11)
 A_blau = 285458.0625 
-B_blau = 1009*10**(-3)
+B_blau = 1.009
 
 delta_lambda_blau = dlambda(delta_lambda_d_blau, blau_d_s, blau_delta_s)
 print(delta_lambda_blau)
@@ -104,5 +104,6 @@ delta_lambda_blau_sigma = dlambda(delta_lambda_d_blau, blau_d_s_sigma, blau_delt
 print(delta_lambda_blau_sigma)
 print('delta_lambda_blau_sigma =', np.mean(delta_lambda_blau_sigma), '±', np.std(delta_lambda_blau_sigma, ddof=1) / np.sqrt(len(delta_lambda_blau_sigma)))
 
-g_blau_sigma = (planck*einstein*delta_lambda_blau_sigma)/(mu_b*B_blau*(lambda_blau**2))
+B_blau_2 = 306.8*10**(-3)
+g_blau_sigma = (planck*einstein*delta_lambda_blau_sigma)/(mu_b*B_blau_2*(lambda_blau**2))
 print('g_blau_sigma =', np.mean(g_blau_sigma), '±', np.std(g_blau_sigma, ddof=1) / np.sqrt(len(g_blau_sigma)))

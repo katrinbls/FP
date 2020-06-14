@@ -189,10 +189,12 @@ Bei monochromatischen Licht werden dementsprechend nur dann Interferenzstreifen 
 
 Damit es zu keiner Überlagerung der Interfernzstreifen kommt, darf die Wellenlängendifferenz maximal
 \begin{equation}
+    \label{eq:lambda_d}
 \Delta \lambda_D = \frac{\lambda ^2}{2d}\sqrt{\frac{1}{n^2-1}}
 \end{equation}
 betragen. Das Auflösungsvermögen der Lummer-Gehrke-Platte ist demnach gegeben durch
 \begin{equation}
+    \label{eq:a}
 A = \frac{\lambda}{\Delta \lambda} = \frac{L}{\lambda}(n^2-1) \quad  .
 \end{equation}
 Hierbei ist $L$ die Länge und $n$ der Brechungsindes der Lummer-Gehrke-Platte.
@@ -207,6 +209,83 @@ im Energiespektrum sichtbar sind.
 Anschließend wird die Apparatur erneut justiert, sodass nun ein blauer Lichtstrahl auf die Lummer-Gehrke Platte trifft und die Prozedur wiederholt.
 
 \section{Auswertung}
+\subsection{Vorbereitung}
+Vorab muss das Auflösungsvermögen $A$ und das Dispersionsgebiet $\Delta \lambda_D$ der Lummer-Gehrcke-Platte 
+für beide Wellenlängen bestimmt werden. Für die hier verwendete Platte mit der Dicke $d = 4 \, \si{\milli\meter}$ und 
+der Länge $L = 120 \, \si{\milli\meter}$ ergeben sich mit Formel \eqref{eq:lambda_d} und \eqref{eq:a} die Werte in Tabelle \ref{tab:atab0}.
+\FloatBarrier
+\begin{table}[h]
+    \centering
+    \caption{Dispersionsgebiet $\Delta \lambda_D$ und spektrale Auflösung $A$ der Lummer-Gehrcke-Platte mit Brechungsindex $n$ für rotes und blaues Licht.}
+    \label{tab:atab0}
+    \begin{tabular}{c c c c}
+        \toprule
+        {$\lambda / \si{\nano\meter}$} & {$n$} & {$\delta \lambda / 10^{-11}\, \si{\meter}$} & {$A$}\\
+        \midrule
+        643.8 & 1.4567 & 4.891 & 209129 \\
+        480.0 & 1.4635 & 2.695 & 285458 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+\FloatBarrier
+\noindent
+Es werden außerdem die Landé-Faktoren der roten und blauen Zeeman-Linie sowie deren Aufspaltung $\Delta E$ berechnet.
+Die Landé-Faktoren berechnen sich dabei nach Formel \eqref{eq:lande}. Beim normalen Zeeman-Effekt ist $S = 0$ und daher
+$J = L$, weswegen immer $g_i = 1$ gilt. Der Landé-Faktor der Übergangs ist $g_{ij} = m_i g_i - m_j g_j$ und die Aufspaltung
+berechnet sich mit
+\begin{equation*}
+    \Delta E = g_{ij} \mu_B B \, .
+\end{equation*}
+\FloatBarrier
+\begin{table}[h]
+    \centering
+        \caption{Landé-Faktoren für den Übergang $^{1}P_1 \, \leftrightarrow \, ^{1}D_2$.}
+        \label{tab:atab00}
+        \begin{tabular}{c c c c c c}
+            \toprule
+            & \multicolumn{2}{c}{$^{1}P_1$} & \multicolumn{2}{c}{$^{1}D_2$} \\ % & \multicolumn{1}{c}{$^{1}P_1 \, \leftrightarrow \, ^{1}D_2$} \\
+            \cmidrule(lr){2-3}\cmidrule(lr){4-5}
+            {$\text{Übergang}$} & {$m_1$} & {$g_1$} & {$m_2$} & {$g_2$} & {$\Delta E$} \\
+            \midrule
+            {}         & 2 & 1 & 1  & 1 & {} \\
+            {$\sigma$} & 1 & 1 & 0  & 1 & {$\mu_B B$} \\
+            {}         & 0 & 1 & -1 & 1 & {} \\
+            \midrule
+            {}         & 1  & 1 & 1  & 1 & {} \\
+            {$\pi$}    & 0  & 1 & 0  & 1 & 0  \\
+            {}         & -1 & 1 & -1 & 1 & {} \\
+            \midrule
+            {}         & 0  & 1 & 1  & 1 & {} \\
+            {$\sigma$} & -1 & 1 & 0  & 1 & {$- \mu_B B$} \\
+            {}         & -2 & 1 & -1 & 1 & {} \\
+            \bottomrule
+        \end{tabular}
+\end{table}
+\FloatBarrier
+\begin{table}[h]
+        \centering
+        \caption{Landé-Faktoren für den Übergang $^{3}P_1 \, \leftrightarrow \, ^{3}S_1$.}
+        \label{tab:atab01}
+        \begin{tabular}{c c c c c c}
+            \toprule
+            & \multicolumn{2}{c}{$^{3}P_1 $} & \multicolumn{2}{c}{$^{3}S_1$} \\ %& \multicolumn{1}{c}{$^{3}P_1 \, \leftrightarrow \, ^{3}S_1$} \\
+            \cmidrule(lr){2-3}\cmidrule(lr){4-5}
+            {$\text{Übergang}$} & {$m_1$} & {$g_1$} & {$m_2$} & {$g_2$} & {$\Delta E$} \\
+            \midrule
+            {$\sigma$} & 1 & 2 & 0  & {$\frac{3}{2}$}  & {$2  \mu_B B$} \\
+            {}         & 0 & 2 & -1 & {$\frac{3}{2}$}  & {$\frac{3}{2}  \mu_B B$} \\
+            \midrule
+            {}         & 1  & 2 & 1  & {$\frac{3}{2}$}  & {$\frac{1}{2}  \mu_B B$} \\
+            {$\pi$}    & 0  & 2 & 0  & {$\frac{3}{2}$}  & 0 \\
+            {}         & -1 & 2 & -1 & {$\frac{3}{2}$}  & {$-\frac{1}{2}  \mu_B B$} \\
+            \midrule
+            {$\sigma$} & 0  & 2 & 1  & {$\frac{3}{2}$} & {$-\frac{3}{2}  \mu_B B$} \\
+            {}         & -1 & 2 & 0  & {$\frac{3}{2}$} & {$-2 \mu_B B$} \\
+            \bottomrule
+        \end{tabular}
+\end{table}
+\FloatBarrier
+\noindent
 \subsection{Magnetfeldmessung}
 Die gemessenen Werte der Magnetfeldstärke sind in Tabelle \ref{tab:atab1} dargestellt.
 \FloatBarrier
@@ -218,7 +297,7 @@ Die gemessenen Werte der Magnetfeldstärke sind in Tabelle \ref{tab:atab1} darge
         \label{tab:atab1}
         \begin{tabular}{c c}
             \toprule
-            {$I / A$} & {$B / \text{mT}$} \\
+            {$I / A$} & {$\Delta \lambda_D / \text{mT}$} \\
             \midrule
             0.5 & 46    \\ 
             1   & 92    \\
@@ -297,7 +376,7 @@ Diese gemessenen Werte für $\delta s$ und $\Delta s$ sowie jeweils der berechne
     \label{tab:atab2}
     \begin{tabular}{c c c}
         \toprule
-        {$\Delta s / \text{px}$} & {$\delta s / \text{px}$} & {$\delta \lambda / \si{\meter}^{-11}$}\\
+        {$\Delta s / \text{px}$} & {$\delta s / \text{px}$} & {$\delta \lambda / 10^{-11}\, \si{\meter}$}\\
         \midrule
         15 & 5 & 0.8152 \\ 
         14 & 5 & 0.8734 \\
@@ -370,7 +449,7 @@ $\delta s$ und $\Delta s$ sowie jeweils der berechnete Wert für $\delta \lambda
     \label{tab:atab3}
     \begin{tabular}{c c c}
         \toprule
-        {$\Delta s / \text{px}$} & {$\delta s / \text{px}$} & {$\delta \lambda / \si{\meter}^{-11}$}\\
+        {$\Delta s / \text{px}$} & {$\delta s / \text{px}$} & {$\delta \lambda / 10^{-11}\, \si{\meter}$}\\
         \midrule
         116 & 74 & 0.8596 \\
         114 & 64 & 0.7565 \\
@@ -430,7 +509,7 @@ Die für die $\sigma$-Linie bei $B = 306.8 \, \si{\milli\tesla}$ bestimmten Wert
     \label{tab:atab4}
     \begin{tabular}{c c c}
         \toprule
-        {$\Delta s / \text{px}$} & {$\delta s / \text{px}$} & {$\delta \lambda / \si{\meter}^{-11}$}\\
+        {$\Delta s / \text{px}$} & {$\delta s / \text{px}$} & {$\delta \lambda / 10^{-11}\, \si{\meter}$}\\
         \midrule
         11 & 6  & 0.7350 \\
         11 & 6  & 0.7350 \\

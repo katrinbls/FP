@@ -7,4 +7,3 @@ main.pdf: main.tex header.tex literatur.bib
 	lualatex main.tex
 
 clean:
-	rm Aufgabe2

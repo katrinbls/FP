@@ -4,6 +4,85 @@
 
 \maketitle
 
+\section{Auswertung}
+\subsection{Überprüfung der Stabilitätsbedingung}
+Die Messwerte zur Untersuchung der Stabilitätsbedingung sind in der Tabelle \ref{tab:atab1} des Anhangs zu finden.
+Nach \eqref{eq:} zeigt die Leistung einen quadratischen Verlauf, somit werden die Messwerte mit an eine quadratische Funktion
+\begin{equation}
+    I(L) = a L^2 + b L + c \label{eq:fit}
+\end{equation}
+gefittet. 
+Um die Messwerte besser vergleichen zu können werden diese normiert und die Nullleistung, für welche ein Wert von $\Phi_0 = (16.63 \pm 0.043)\si{\micro\W}$ gemessen wurde, abgezogen.
+Die enstprechenden Fitparamter sind in Tabelle \ref{tab:atab2} zu finden, wobei zurerst die Messreihen separat und anschließend alle Messwerte zusammen betrachtet werden. 
+Die Messdaten und die nach \eqref{eq:fit} errechneten Ausgleichspolynome sind in den Abbildungen \ref{fig:afig1} und \ref{fig:afig2} dargestellt.
+\noindent
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{Stabilität.pdf}
+\caption{Messwerte der Strahlungsleistung aller drei Messreihen in Abhängigkeit der Resonatorlänge und Ausgleichsrechnung.}
+\label{fig:afig1}
+\end{figure}
+\FloatBarrier
+\noindent
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{Stabilität_all.pdf}
+\caption{Messwerte der Strahlungsleistung in Abhängigkeit der Resonatorlänge und Ausgleichsrechnung.}
+\label{fig:afig2}
+\end{figure}
+\FloatBarrier
+\noindent
+\FloatBarrier
+\begin{table}[h]
+    \centering
+    \caption{Parameter der Gleichung \eqref{eq:fit}.}
+    \label{tab:atab2}
+    \begin{tabular}{l c c c c}
+        \toprule
+        {} & {Messung 1} & {Messung 2} & {Messung 3} & {alle Messwerte} \\
+        \midrule
+        $a / \si{\micro\W\per\cm\squared}\cdot10^{3}$ & $(1,084 \pm 0,731)$ & $(0,190 \pm 0,816)$ & $(1,51 \pm 0,358)$ & $(0,451 \pm 0,370)$ \\
+        $b / \si{\micro\W\per\cm}\cdot10^{2}$ & $(-19,951 \pm 11,712)$ & $(-6,460 \pm 14,048)$ & $(-26,332 \pm 5,742)$ & $(-9,607 \pm 6,066)$ \\
+        $c / \si{\micro\W}$ & $(9,280 \pm 4,639)$ & $(4,547 \pm 5,998)$ & $(11,540 \pm 2,275)$ & $(5,156 \pm 2,464)$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+\FloatBarrier
+
+Diese und alle folgenen Ausgleichsrechnungen werden mit dem Paket $\texttt{SciPy.optimize.curve\_fit}$ durchgeführt, Fehlerrechnung erfolgt mittels dem $\texttt{Python}$-Paket $\texttt{uncertainties.unumpy}$.
+Eine ausführliche Diskussion des Plots ist in Abschnitt \ref{sec: Diskussion} zu finden.
+
+section{Untersuchung der TEM-Moden}
+
+
+
+
+\section{Diskussion} \label{sec: Diskussion}
+
+\appendix 
+\section*{Anhang}\label{sec:Anhang}
+
+\FloatBarrier
+\begin{table}[h]
+    \centering
+    \caption{Messwerte der Strahlungsleistung $\Phi$ in Abhängigkeit der Resonatorlänge $L$.}
+    \sisetup{table-format=2.1}
+    \label{tab:atab1}
+    \begin{tabular}{c c c c c c}
+        \toprule
+        \multicolumn{2}{c}{Messung 1} & \multicolumn{2}{c}{Messung 2} & \multicolumn{2}{c}{Messung 3} \\
+        \cmidrule(lr){1-2}\cmidrule(lr){3-4}\cmidrule(lr){5-6}
+        {$L/\si{\cm}$} & {$\Phi/\si{\micro\W}$} & {$L/\si{\cm}$} & {$\Phi/\si{\micro\W}$} & {$L/\si{\cm}$} & {$\Phi/\si{\micro\W}$} \\
+        \midrule
+
+
+        \bottomrule
+    \end{tabular}
+\end{table}
+\FloatBarrier
+\noindent
 
 
 \nocite{wingate}

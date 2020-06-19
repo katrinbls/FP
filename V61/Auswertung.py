@@ -76,9 +76,10 @@ plt.plot(x, fitFunc(params1[0], params1[1], params1[2], x), label='Fit 2. Messun
 plt.errorbar(d2, I2, yerr = err2, fmt='.', label='3. Messung', color = 'darkorange')
 plt.plot(x, fitFunc(params2[0], params2[1], params2[2], x), label='Fit 3. Messung', color = 'darkorange')
 plt.legend(loc='best')
-plt.xlabel(r'$ \frac{d}{\mathrm{cm}}$')
+plt.xlabel(r'$ \frac{L}{\mathrm{cm}}$')
 plt.ylabel(r'$\frac{\Phi}{\Phi_{\mathrm{max}}}$')
 plt.grid()
+plt.xlim(60, 110)
 plt.savefig('Stabilität.pdf')
 
 plt.clf()
@@ -86,34 +87,117 @@ plt.clf()
 plt.errorbar(d_all, I_all, yerr = err_all, fmt='.', label='Messwerte')
 plt.plot(x, fitFunc(params[0], params[1], params[2], x), label='Fit aller Messung')
 plt.legend(loc='best')
-plt.xlabel(r'$ \frac{d}{\mathrm{cm}}$')
+plt.xlabel(r'$ \frac{L}{\mathrm{cm}}$')
 plt.ylabel(r'$\frac{\Phi}{\Phi_{\mathrm{max}}}$')
 plt.grid()
+plt.xlim(60, 110)
 plt.savefig('Stabilität_all.pdf')
 
 plt.clf()
 
+
+########################################################################
 #Untersuchung der TEM Moden
-def gauss(a, w, x):
-    return a * np.exp(-x**2/(2*w**2))
+def gauss(x, a, l, w):
+    return a * np.exp(-2*((x-l)/w)**2)
 
 d, I, err = np.genfromtxt("TEM00_Mode.txt", unpack=True)
-d = d-11
-I = I - np.min(I)
+I = I - unp.nominal_values(null)
 
-for s in np.linspace(15, 30, 30):
-    for n in np.linspace(1, 30, 30):
-        params, covariance_matrix = curve_fit(gauss, d, I, p0=(s, n))
-        print(params)
+params, covariance_matrix = curve_fit(gauss, d, I, p0=(30, 10, 1))
+#print(params)
+errors = np.sqrt(np.diag(covariance_matrix))
 
-        x = np.linspace(-15, 10)
+print('I =', params[0], '±', errors[0])
+print('d_0 =', params[1], '±', errors[1])
+print('w =', params[2], '±', errors[2])
 
-        plt.errorbar(d, I, yerr = err, fmt='.', label='Messwerte')
-        plt.plot(x, gauss(params[0], params[1], x), label='Fit mit Gausskurve')
-        plt.legend(loc='best')
-        plt.xlabel(r'$ \frac{d}{\mathrm{cm}}$')
-        plt.ylabel(r'$\frac{\Phi}{\Phi_{\mathrm{max}}}$')
-        plt.grid()
-        plt.savefig('TEM00'+ str(s) + str(n) + '.pdf')
+x = np.linspace(-15, 40, 1000)
 
-        plt.clf()
+plt.errorbar(d, I, yerr = err, fmt='.', label='Messwerte')
+plt.plot(x, gauss(x, params[0], params[1], params[2]), label='Fit mit Gausskurve')
+plt.legend(loc='best')
+plt.xlabel(r'$ \frac{d}{\mathrm{cm}}$')
+plt.ylabel(r'$\Phi/\mathrm{\mu W}$')
+plt.xlim(-15, 40)
+plt.grid()
+plt.savefig('TEM00.pdf')
+
+plt.clf()
+
+
+############################################################################
+#Untersuchung der Polarisation
+phi, I, err = np.genfromtxt("Polarisation.txt", unpack=True)
+
+phi = 2*np.pi/360 * phi
+I = I - unp.nominal_values(null)
+
+def polfit(x, a, b):
+    return a*np.sin(x-b)**2
+
+params, covariance_matrix = curve_fit(polfit, phi, I, p0=(780, 0))
+
+errors = np.sqrt(np.diag(covariance_matrix))
+
+print('I =', params[0], '±', errors[0])
+print('phi =', params[1], '±', errors[1])
+
+alpha = ufloat(params[1], errors[1])
+print("alpha")
+print(alpha*360/(2*np.pi))
+
+x = np.linspace(-1, 2*np.pi, 1000)
+
+
+
+plt.errorbar(phi, I, yerr = err, fmt='.', label='Messwerte')
+plt.plot(x, polfit(x, params[0], params[1]), label='Fit')
+plt.legend(loc='best')
+plt.xlabel(r'$ \frac{\phi}{\mathrm{rad}}$')
+plt.ylabel(r'$\Phi/\mathrm{\mu W}$')
+plt.grid()
+plt.xlim(-1, 2*np.pi)
+plt.savefig('Polarisation.pdf')
+
+plt.clf()
+
+###########################################################
+#Wellenlängenmessung
+
+def Wellenlange(a, n, d, L):
+    return a/n*unp.sin(unp.arctan(d/L))
+
+#100
+d_100, n_100, err_100 = np.genfromtxt("Gitter_100.txt", unpack=True)
+l_100 = ufloat(54.3, 0.1)
+du_100 = unp.uarray(d_100, err_100)
+a_100 = 1/1000
+
+print("100 Gitter")
+wl_100 = Wellenlange(a_100, n_100, d_100, l_100)
+print(wl_100)
+print((sum(wl_100)/len(wl_100)))
+
+
+d_600, n_600, err_600 = np.genfromtxt("Gitter_600.txt", unpack=True)
+l_600 = ufloat(42.1, 0.1)
+du_600 = unp.uarray(d_600, err_600)
+a_600 = 1/6000
+
+print("600 Gitter")
+wl_600 = Wellenlange(a_600, n_600, d_600, l_600)
+print(wl_600)
+print((sum(wl_600)/len(wl_600)))
+
+
+d_1200, n_1200, err_1200 = np.genfromtxt("Gitter_1200.txt", unpack=True)
+l_1200 = ufloat(42.1, 0.1)
+du_1200 = unp.uarray(d_1200, err_1200)
+a_1200 = 1/12000
+
+print("1200 Gitter")
+wl_1200 = Wellenlange(a_1200, n_1200, d_1200, l_1200)
+print(wl_1200)
+
+print(((sum(wl_100)/len(wl_100))+(sum(wl_600)/len(wl_600))+wl_1200)/3)

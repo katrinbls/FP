@@ -6,38 +6,22 @@
 
 \section{Auswertung}
 \subsection{Überprüfung der Stabilitätsbedingung}
-Die Messwerte zur Untersuchung der Stabilitätsbedingung sind in der Tabelle \ref{tab:atab1} des Anhangs zu finden.
-Nach \eqref{eq:} zeigt die Leistung einen quadratischen Verlauf, somit werden die Messwerte mit an eine quadratische Funktion
+Die Messwerte zur Überprüfung der Stabilitätsbedingung sind in der Tabelle \ref{tab:atab1} des Anhangs zu finden.
+Nach \eqref{eq:} zeigt die Leistung für zwei konkave Spiegel $r=1400\,\si{\mm}$ einen quadratischen Verlauf, somit werden die Messwerte an eine quadratische Funktion der Form
 \begin{equation}
-    I(L) = a L^2 + b L + c \label{eq:fit}
+    \symup{\Phi}(L) = a L^2 + b L + c \label{eq:fit1}
 \end{equation}
 gefittet. 
-Um die Messwerte besser vergleichen zu können werden diese normiert und die Nullleistung, für welche ein Wert von $\Phi_0 = (16.63 \pm 0.043)\si{\micro\W}$ gemessen wurde, abgezogen.
+Um die Messwerte besser vergleichen zu können werden diese normiert und die Nullleistung, für welche ein Wert von $\symup{\Phi} = (16.63 \pm 0.043)\si{\micro\W}$ gemessen wurde, abgezogen.
 Die enstprechenden Fitparamter sind in Tabelle \ref{tab:atab2} zu finden, wobei zurerst die Messreihen separat und anschließend alle Messwerte zusammen betrachtet werden. 
-Die Messdaten und die nach \eqref{eq:fit} errechneten Ausgleichspolynome sind in den Abbildungen \ref{fig:afig1} und \ref{fig:afig2} dargestellt.
-\noindent
-\FloatBarrier
-\begin{figure}[h]
-\centering
-\includegraphics[width=\textwidth]{Stabilität.pdf}
-\caption{Messwerte der Strahlungsleistung aller drei Messreihen in Abhängigkeit der Resonatorlänge und Ausgleichsrechnung.}
-\label{fig:afig1}
-\end{figure}
-\FloatBarrier
-\noindent
-\FloatBarrier
-\begin{figure}[h]
-\centering
-\includegraphics[width=\textwidth]{Stabilität_all.pdf}
-\caption{Messwerte der Strahlungsleistung in Abhängigkeit der Resonatorlänge und Ausgleichsrechnung.}
-\label{fig:afig2}
-\end{figure}
-\FloatBarrier
-\noindent
+Die Messdaten und die nach \eqref{eq:fit1} errechneten Ausgleichspolynome sind in den Abbildungen \ref{fig:afig1} und \ref{fig:afig2} dargestellt.
+Eine ausführliche Diskussion der Plots ist in Abschnitt \ref{sec: Diskussion} zu finden.
+
+Diese und alle folgenden Ausgleichsrechnungen werden mit dem Paket $\texttt{SciPy.optimize.curve\_fit}$ durchgeführt. Fehlerrechnung erfolgt mittels dem $\texttt{Python}$-Paket $\texttt{uncertainties.unumpy}$.
 \FloatBarrier
 \begin{table}[h]
     \centering
-    \caption{Parameter der Gleichung \eqref{eq:fit}.}
+    \caption{Parameter der Gleichung \eqref{eq:fit1}.}
     \label{tab:atab2}
     \begin{tabular}{l c c c c}
         \toprule
@@ -50,32 +34,213 @@ Die Messdaten und die nach \eqref{eq:fit} errechneten Ausgleichspolynome sind in
     \end{tabular}
 \end{table}
 \FloatBarrier
+\noindent
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{Stabilität.pdf}
+\caption{Messwerte der Strahlungsleistung aller drei Messreihen in Abhängigkeit der Resonatorlänge und Ausgleichsrechnung für $r_1=r_2=1400\,\si{\mm}$.}
+\label{fig:afig1}
+\end{figure}
+\FloatBarrier
+\noindent
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{Stabilität_all.pdf}
+\caption{Messwerte der Strahlungsleistung in Abhängigkeit der Resonatorlänge und Ausgleichsrechnung $r_1=r_2=1400\,\si{\mm}$..}
+\label{fig:afig2}
+\end{figure}
+\FloatBarrier
+\noindent
 
-Diese und alle folgenen Ausgleichsrechnungen werden mit dem Paket $\texttt{SciPy.optimize.curve\_fit}$ durchgeführt, Fehlerrechnung erfolgt mittels dem $\texttt{Python}$-Paket $\texttt{uncertainties.unumpy}$.
-Eine ausführliche Diskussion des Plots ist in Abschnitt \ref{sec: Diskussion} zu finden.
-
-section{Untersuchung der TEM-Moden}
 
 
+
+\subsection{Untersuchung der TEM-Moden}
+Die Messdaten zur Untersuchung der $\text{TEM}_{0,0}$-Mode sind in Tabelle \ref{tab:atab3} des Anhangs zu finden. 
+Die Grundmode wird an eine Gaußfunktion der Form
+\begin{equation}
+\symup{\Phi}(x) = \symup{\Phi}_0 \text{exp}\left(-2\left(\frac{(x-x_0)}{\omega}\right)^2\right) \label{eq:fit2}
+\end{equation}
+gefittet. 
+Dabei stellt $\symup{\Phi}_0$ die maximale Strahlungsleistung und $x_0$ die transversale Verschiebung des Maximums dar. 
+$\omega$ ist ein Maß für die Breite der Verteilung. 
+Für diese drei freien Parameter ergeben sich die Werte
+\begin{align}
+\symup{\Phi}_0 &= (22,524 \pm 0,853)\,\si{\micro\watt} \\
+x_0 &= (12,200 \pm 1,226)\,\si{\mm}\\
+\omega &= (25,566\pm5,936)\,\si{\mm} \quad .
+\end{align}
+Die daraus resultierende Ausgleichsfunktion ist zusammen mit den Messwerten in Abbildung \ref{fig:afig3} aufgetragen.
+\noindent
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{TEM00.pdf}
+\caption{Messdaten der Strahlungsleistungs der $\text{TEM}_{0,0}$-Mode entlang der transversalen Achse und gefittete Gaußfunktion \eqref{eq:fit2}.}
+\label{fig:afig3}
+\end{figure}
+\FloatBarrier
+
+\subsection{Untersuchung der Polarisation}
+Die für die Polarisationsuntersuchung aufgenommenen Messwerte sind in Tabelle \ref{tab:atab4} des Anhangs zu finden. 
+In Abbildung \ref{fig:afig4} ist die Strahlungsleistung gegen den Winkel $\alpha$ des Polarisationsprismas aufgetragen.
+\noindent
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{Polarisation.pdf}
+\caption{Sinusförmiger Verlauf der Strahlungsleistung in Abhängigkeit der Winkels des Polarisationsprismas.}
+\label{fig:afig4}
+\end{figure}
+\FloatBarrier
+Die Ausgleichsfunktion hat die Form
+\begin{equation}
+\symup{\Phi}(\alpha) = \symup{\Phi}_0 \sin^2{\alpha-\alpha_0} \quad ,
+\end{equation}
+wobei sich für die freien Parameter die Werte
+\begin{align}
+\symup{\Phi}_0 & = (790,013\pm 5,936)\, \si{\micro\watt}\\
+\alpha &= (-0,353\pm 0,007)\, \mathrm{rad}
+\end{align}
+ergeben. 
+Die Minimalleistung ist demnach bei einem Winkel von
+\begin{align}
+\alpha - \alpha_0 &= 2\pi n \qquad \qquad n \in \mathbb{N} \\
+\Leftrightarrow \qquad \quad \alpha &=  2\pi n + \alpha_0 \\
+&\stackrel{n = 0}{=} (-0,353\pm 0,007)\, \mathrm{rad} \\
+&= -20.2° \pm 0.4°
+\end{align}
+erreicht. Somit folgt, dass das Licht des HeNe-Laser linear in einer um $-20,2°$ gekippten Ebenen polarisiert ist.
+
+\subsection{Berechnung der Wellenlänge}
+Die Wellenlänge wird anhand des Interferenzmusters, welches sich durch Beugung an einem Gitter ergibt, errechnet.
+Hierzu wurden drei Gitter mit unterschiedlichen Liniendichten betrachtet.
+Die Messwerte sind in Tabelle \ref{tab:atab5} des Anhangs zu finden. 
+Wobei $n$ jeweils die Ordnung des Hauptmaximums beschreibt, also um das wievielte Maximum ausgehend vom zentralen Maximum es sich handelt.
+
+Die Wellenlänge wird mittels der Formel \eqref{eq:Wellenlänge} berechnet.
+Somit ergibt sich für jedes vermessene Maximum ein Wert für die Wellenlänge, welche in Tabelle \ref{tab:atab6} angegeben sind.
+
+\FloatBarrier
+\begin{table}[h]
+    \centering
+    \caption{Nach \eqref{eq:Wellenlänge} berechneten Werte für die Wellenlänge, aller drei Gitter.}
+    \sisetup{table-format=2.1}
+    \label{tab:atab6}
+    \begin{tabular}{c c c c c c}
+        \toprule
+        \multicolumn{1}{c}{100 Linien/\si{\mm}} & \multicolumn{1}{c}{600 Linien/\si{\mm}} & \multicolumn{1}{c}{1200 Linien/\si{\mm}} \\
+        \cmidrule(lr){1-1}\cmidrule(lr){2-2}\cmidrule(lr){3-3}
+        {$\lambda /\si{\nm}$} & {$\lambda /\si{\nm}$} & {$\lambda /\si{\nm}$} \\
+        \midrule
+        643,232\pm 1,180 & 620,884 \pm 1,270 & 604,1 \pm 0,7 \\
+        630,291\pm 1,142 & 624,788 \pm 0,650 & \\
+        627,031\pm 1,114 & 633,478 \pm 1,287 & \\
+        624,156\pm 1,078 & & \\
+        626,156\pm 1,040 & & \\
+        628,286\pm 0,993 & & \\
+        628,460\pm 0,933 & & \\
+        628,725\pm 0,865 & & \\
+        630,263\pm 0,787 & & \\
+        661,531\pm 1,213 & & \\
+        630,291\pm 1,142 & & \\
+        627,031\pm 1,114 & & \\
+        628,333\pm 1,084 & & \\
+        \\
+        $\text{Mittelwerte}\,\bar{\lambda}/\si{\mm}$ & &\\
+        \cmidrule(lr){1-1}\cmidrule(lr){2-2}\cmidrule(lr){3-3}
+        631,8 \pm 1,1 & 626,4 \pm 1,1 & 604,1 \pm 0,7 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+\FloatBarrier
+\noindent
+Werden die Mittelwerte für die verschiedenen Gitter erneut gemittel ergibt sich für die Wellenlänge ein Wert von
+\begin{equation}
+\lambda = (620,8 \pm 0,5) \, \si{\nm} \qquad .
+\end{equation}
 
 
 \section{Diskussion} \label{sec: Diskussion}
+\subsection*{Überprüfung der Stabilitätsbedingung}
+In diesem Versuch wurden für den Resonantor zwei konkav gekrümmte Spiegel mit dem Radius $r=1400\,\si{\mm}$ verwendet.
+Der erwartete Intensitätsverlauf ist demnach quadratisch im Abstand der Spiegel und besitzt ein Minimum bei $L = r$, in welchem die Intensität verschwindet.
 
+In Abbildung \ref{fig:afig1} zeigen die Messwerte der 2. Messung entgegen der Erwartungen einen beinahe linearen Verlauf im beobachteten Bereich. 
+Zwar ist bei den anderen beiden Messungen ein quadratischer Verlauf zu erkennen, jedoch weist keine der errechneten Ausgleichsfunktionen ein Minimum bei $L = 1,4\,\si{\m}$ auf.
+Die Minima der 1. und 3. Messreihe liegen in einem Bereich zwischen $(0,85-0,95)\,\si{\m}$.
+
+Die Ausgleichfunktion in Abbildung \ref{fig:afig2}, welche sich aus den Messwerten aller drei Messreihen ergibt, zeigt einen etwas besseren Verlauf.
+Es ist ein Minimum bei circa $L=1,05\,\si{\m}$ zu erkennen, welches ein wenig näher an der Lage des erwarteten Minimum bei $L=1,40\,\si{\m}$ liegt.
+
+Wahrscheinlich haben Fehler und Ungenauigkeiten bei dem Messprozessen zu diesen Abweichungen geführt.
+Somit musste der HeNe-Laser bei Veränderung des Abstandes neu justiert werden und je nachdem wie gut der Laser justiert ist, schwankt die Strahlungsleistung stark.
+Im Optimalfall wird immer die maximale Strahlungsleistung für die entsprechende Resonatorlänge gemessen, diese ist allerdings schwer zu erreichen.
+
+Eine weitere Möglichkeit die Ergebnisse zu verbessern, wäre es mehr Messwerte vor allem für große Resonatorlängen zu nehmen.
+Allerdings stellte sich die Messung für große Resonatorlängen, ab etwa $1\,\si{m}$ als sehr schwierig dar, da aufgrund der geringen Leistung die Justage des Lasers kaum möglich war.
+
+
+\subsection*{Untersuchung der TEM-Moden}
+Die Grundmode konnte bei der Durchführung des Versuches auf dem Schirm sichtbar gemacht und somit vermessen werden. 
+Jedoch ist in Abbildung \ref{fig:afig3} deutlich zu sehen, dass mehr Werte gerade in dem Bereich geringer Intensität hätten genommen werden müssen.
+
+Ursprünglich ist auch die Vermessung der ersten angeregten Mode TEM$_{\text{01}}$ Teil dieses Versuches.
+Allerdings ist es auch nach etlichen Versuchen nicht gelungen diese auf dem Schirm sichbar zu machen.
+Grund hier für könnte die Qualität des verwendetem Haares sein. 
+Möglicherweise ist dieses bereits ein wenig ausgefranst oder anders beschädigt, sodass es sich nicht zur Unterdrückung von Moden eignet.
+
+\subsection*{Untersuchung der Polarisation}
+Die Messwerte zur Polarisationsuntersuchung zeigen genau den zu erwarteten $sin^2$-Verlauf.
+Dementsprechend repräsentiert die Ausgleichsfunktion diese Werte sehr gut und es kann angenommen werden, dass die Polarisationsrichtung ziemlich genau dem berechneten Wert von $\alpha = -20.2° \pm 0.4°$ entspricht.
+
+\subsection*{Berechnung der Wellenlänge}
+Die berechneten Wellenlängen sind noch einmal in Tabelle \ref{tab:atab7} zusammengefasst und die Abweichung zu der tatsächlichen Wellenlänge eines Helium-Neon Lasers $\lambda = 632,8\,\si{\nm}$ angegeben.
+\FloatBarrier
+\begin{table}[h]
+    \centering
+    \caption{}
+    \sisetup{table-format=2.1}
+    \label{tab:atab7}
+    \begin{tabular}{l c c}
+        \toprule
+        {} & {$\lambda /\si{\nm}$} & {Abweichung}\\
+        \midrule
+        100 Linien/\si{\mm} & 631,8 \pm 1,1 & 0,16\% \\
+        600 Linien/\si{\mm} & 626,4 \pm 1,1 & 1,01\%\\
+        1200 Linien/\si{\mm} & 604,1 \pm 0,7& 4,54\%\\
+        \\
+        \midrule
+        Mittelwert & 620,8\pm 0,5 & 1,90\%\\ 
+        \bottomrule
+    \end{tabular}
+\end{table}
+\FloatBarrier
+\noindent
+Die Messung mit dem Gitter bei welchem der Linienabstand $0,01\,\si{\mm}$ beträgt, liefert das beste Ergebnis mit nur $0,16\%$ Abweichung vom realen Wert. 
+Dies liegt wahrscheinlich daran, dass der Abstand der Maxima für geringe Liniendichten abnimmt. 
+Somit konnten für das Gitter mit 100 Linien/$\si{\mm}$ die meisten Messwerte aufgenommen werden, während bei dem Gitter mit 1200 Linien/$\si{\mm}$ lediglich ein Abstand gemessen werden konnte.
+Trotzdem liefern auch die anderen beiden Messungen sehr gute Werte mit jeweils Abweichungen von unter $5\%$.
+
+\newpage
 \appendix 
 \section*{Anhang}\label{sec:Anhang}
 
 \FloatBarrier
 \begin{table}[h]
     \centering
-    \caption{Messwerte der Strahlungsleistung $\Phi$ in Abhängigkeit der Resonatorlänge $L$.}
+    \caption{Messwerte der Strahlungsleistung $\symup{\Phi}$ in Abhängigkeit der Resonatorlänge $L$.}
     \sisetup{table-format=2.1}
     \label{tab:atab1}
     \begin{tabular}{c c c c c c}
         \toprule
         \multicolumn{2}{c}{Messung 1} & \multicolumn{2}{c}{Messung 2} & \multicolumn{2}{c}{Messung 3} \\
         \cmidrule(lr){1-2}\cmidrule(lr){3-4}\cmidrule(lr){5-6}
-        {$L/\si{\cm}$} & {$\Phi/\si{\micro\W}$} & {$L/\si{\cm}$} & {$\Phi/\si{\micro\W}$} & {$L/\si{\cm}$} & {$\Phi/\si{\micro\W}$} \\
+        {$L/\si{\cm}$} & {$\symup{\Phi}/\si{\micro\W}$} & {$L/\si{\cm}$} & {$\symup{\Phi}/\si{\micro\W}$} & {$L/\si{\cm}$} & {$\symup{\Phi}/\si{\micro\W}$} \\
         \midrule
+        %Hier bitte die Daten der Intensitäts-Abstands Messung einfügen aus den Intensität_Abstand txt dateien
 
 
         \bottomrule
@@ -84,6 +249,64 @@ section{Untersuchung der TEM-Moden}
 \FloatBarrier
 \noindent
 
+\FloatBarrier
+\begin{table}[h]
+    \centering
+    \caption{Messdaten der Strahlungsleistungs der $\text{TEM}_{0,0}$-Mode entlang der transversalen Achse.}
+    \sisetup{table-format=2.1}
+    \label{tab:atab3}
+    \begin{tabular}{c c}
+        \toprule
+        {$x/\si{\mm}$} & {$\symup{\Phi}/\si{\micro\W}$}\\
+        \midrule
+        % hier bitte die Messwerte der TEM Mode aus der datei TEM00_Mode.txt einfügen :)
+
+        \bottomrule
+    \end{tabular}
+\end{table}
+\FloatBarrier
+\noindent
+
+\FloatBarrier
+\begin{table}[h]
+    \centering
+    \caption{Messwerte zur Untersuchung der Polarisation des HeNe-Lasers in Abhängigkeit des Winkels des Polarisationsprismas.}
+    \sisetup{table-format=2.1}
+    \label{tab:atab4}
+    \begin{tabular}{c c}
+        \toprule
+        {$\alpha/\mathrm{rad}$} & {$\symup{\Phi}/\si{\micro\W}$}\\
+        \midrule
+        % hier bitte die Messwerte der Polarisationsmessung aus der datei Polarisation.txt einfügen :)
+
+        \bottomrule
+    \end{tabular}
+\end{table}
+\FloatBarrier
+\noindent
+
+\FloatBarrier
+\begin{table}[h]
+    \centering
+    \caption{Gemessene Abstände der Haupmaxima zum zentralen Hauptmaximum. Es wird eine Ablesefehler von $0,1\,\si{\cm}$ angenommen. $L$ ist der Abstand zwischen Gitter und Schirm.}
+    \sisetup{table-format=2.1}
+    \label{tab:atab5}
+    \begin{tabular}{c c c c c c}
+        \toprule
+        \multicolumn{2}{c}{100 Linien/\si{\cm}} & \multicolumn{2}{c}{600 Linien/\si{\cm}} & \multicolumn{2}{c}{1200 Linien/\si{\cm}} \\
+        \multicolumn{2}{c}{L= 54,3\si{\cm}} & \multicolumn{2}{c}{L = 42,1\si{\cm}} & \multicolumn{2}{c}{L=42,1\si{\cm}} \\
+
+        \cmidrule(lr){1-2}\cmidrule(lr){3-4}\cmidrule(lr){5-6}
+        {$n$} & {$d / \si{\cm}$} & {$n$} & {$d / \si{\cm}$} & {$n$} & {$d / \si{\cm}$} \\
+        \midrule
+        %Hier bitte die Daten für die Wellenlängen bestimmung aus Gitter_xx.txt einfügen
+
+
+        \bottomrule
+    \end{tabular}
+\end{table}
+\FloatBarrier
+\noindent
 
 \nocite{wingate}
 \nocite{*}

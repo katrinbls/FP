@@ -4,6 +4,179 @@
 
 \maketitle
 
+\section{Zielsetzung}
+Ziel des Versuchs ist die Untersuchung der Funktionsweise eines Helium-Neon-Lasers, sowie der Einfluss 
+der einzelnen Elemente auf seine Funktion.
+%lol ich bin mir bei dem Satz nicht so sicher
+
+\section{Theorie}
+Ein Laser erzeugt monochromatisches Licht hoher Intensität und Kohärenz und findet in vielen technischen 
+und wissenschaftlichen Bereichen Anwendung.
+Prinzipiell besteht ein Laser aus drei Komponenten: einem aktiven Lasermedium, 
+einer Pumpquelle und einem Resonator. 
+Im aktiven Medium, welches das Spektrum der emittierten Strahlung bestimmt, 
+entstehen Photonen durch optische Übergänge angeregter Atome. Zur Erzeugung der dafür notwendigen Besetzungsinversion 
+führt die Pumpquelle dem Medium permanent Energie zu.
+Der Resonator besteht aus zwei gegenüberliegenden Spiegeln, an denen die Photonen reflektiert werden. Dadurch durchlaufen
+sie mehrmals das aktive Medium, wodurch neue Photonen emittiert werden, und ein selbsterregender Oszillator entsteht.
+%Im aktiven Medium werden durch einen optischen Übergang Photonen erzeugt
+
+\subsection*{Optische Übergänge}
+Bei den optischen Übergängen zwischen den diskreten Energieniveaus $E_1$ und $E_2$ in den Atomen des aktiven Mediums
+müssen die drei Fälle Absorption, spontane Emission und induzierte Emission unterschieden werden. Diese sind in 
+Abbildung \ref{fig:tfig1} schematisch dargestellt.
+\FloatBarrier
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{optisch.png}
+    \caption{Optische Übergänge im Zwei-Niveau-System \cite{quelle01}.}
+    \label{fig:dfig1}
+    \end{figure}
+\FloatBarrier
+\noindent
+Vereinfacht werden nur zwei Niveaus mit Besetzungszahlen $n_1$ und $n_2$ betrachtet. 
+Absorption tritt auf, wenn ein einfallendes Photon genau die Energie des Übergangs besitzt. Das Photon wird dann von einem
+Elektron absorbiert, welches dadurch in ein höheres Energieniveau angeregt wird.
+Bei spontaner Emission findet ein Übergang eines Elektrons in ein niedrigeres Energieniveau statt. Die dabei freiwerdende
+Energie wird als Photon emittiert. Geschieht dieser Übergang nicht spontan, sondern wird von einem einfallenden 
+Photon herbeigeführt, so findet induzierte Emission statt. Das emittierte und das einfallende Photon haben dann die gleiche
+Energie, Phase und Ausbreitungsrichtung.
+Eine Verstärkung des Lichts im Laser wird erreicht, wenn stimulierte Emission häufiger auftritt als spontane Emission, 
+da sich dadurch die Anzahl der Photonen jeweils verdoppelt und eine hohe Verstärkung erreicht wird. 
+Um das zu erreichen, muss das energetisch höhere Niveau höher besetzt sein als das energetisch niedrigere. Für diese
+Besetzungsinversion wird dem aktiven Medium mit der Pumpquelle ständig Energie zugeführt, wodurch die Besetzungswahrscheinlichkeit
+des höheren Niveaus steigt. 
+Im hier beschriebenen Zwei-Niveau-System ist es jedoch gar nicht möglich, die Besetzungsinversion zu realisieren,
+da der Pumpvorgang direkt zwischen den beiden Niveaus stattfindet und die Besetzungszahl des oberen Niveaus maximal
+gleich der des unteren Niveaus wird. Dann ist jedoch die Wahrscheinlichkeit, dass ein Photon von einem Atom im oberen 
+Niveau durch stimulierte Emission abgegeben wird gleich der Wahrscheinlichkeit, dass ein Atom im unteren Niveau ein 
+Photon absorbiert. Die spontane Emission führt dann dazu, dass das obere Niveau immer weniger besetzt ist als das untere.
+Notwendig ein weiteres Energieniveau $E_3$, sodass der Pumpvorgang zwischen $E_1$ und $E_3$ stattfindet. Wichtig ist,
+dass der Übergang $E_3 \rightarrow E_2$ deutlich schneller ist als der Übergang $E_2 \rightarrow E_1$.
+
+\subsection*{Optischer Resonator}
+Die Verstärkung des Lichts wächst exponentiell mit dem Laufweg durch das aktive Medium an, weswegen mit dem 
+Resonator dieser Laufweg verlängert wird. Der Resonator besteht aus zwei gegenüberliegenden Spiegeln, von denen einer, der Auskoppelspiegel, 
+halbdurchlässig ist. Zwischen diesen Spiegeln wird das Licht reflektiert und durchläuft daher das aktive Medium mehrmals,
+wie in Abbildung \ref{fig:tfig2} dargestellt.
+\FloatBarrier
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{strahlen.png}
+    \caption{Strahlenverlauf im Resonator des Lasers zwischen zwei konvexen Spiegeln \cite{quelle02}.}
+    \label{fig:tfig2}
+    \end{figure}
+\FloatBarrier
+\noindent
+Für die einzelnen Spiegel können dabei sowohl planparallele als auch sphärische eingesetzt werden. 
+Selbsterregende Oszillation tritt ein, wenn die Verluste im Resonator kleiner sind als die Verstärkung durch 
+induzierte Emission. Das ist der Fall, wenn die Stabilitätsbedingung
+\begin{equation*}
+    0 \leq g_1 \cdot g_2 \leq 1 
+\end{equation*}
+mit den Stabilitätsparametern $g_i = 1 - \frac{L}{r_i}$ erfüllt ist, wobei $r_i$ der Krümmungsradius des Spiegels
+und $L$ die Resonatorlänge ist.
+Wie in Abbildung \ref{fig:tfig3} erkennbar, hat $g_1 \cdot g_2$ ein Nullstelle, wenn die Länge des Resonators
+genau dem Krümmungsradius eines Spiegels entspricht.
+\FloatBarrier
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{g1g2.pdf}
+    \caption{Verlauf von $g_1 \cdot g_2$ in Abhängigkeit von der Länge $L$ des Resonators.}
+    \label{fig:tfig3}
+    \end{figure}
+\FloatBarrier
+\noindent
+
+\subsection*{Resonatormoden}
+Die die Länge des Resonators deutlich über der Wellenlänge des Laserlichts liegt, erfüllen viele Wellenlängen die 
+Resonanzbedingung 
+\begin{equation*}
+    2 L = q \cdot \lambda 
+\end{equation*}
+und erzeugen eine stehende Welle zwischen den Resonatorspiegeln. Die Anzahl $q$ dieser Wellenlängen ist die longitudinale
+Mode. Durch störende Einflüsse wie Verkippungen der Spiegel können auch transversale Moden auftreten, die Verteilung
+der Phasenlage der Wellen senkrecht zur Ausbreitungsrichtung. 
+Die Moden eines Lasers werden mit $TEM_{lpq}$ gekennzeichnet, wobei $TEM$ abkürzend für \textit{Transverse Electric Mode} ist
+und $l$ und $p$ die Knoten in $x$- und $y$-Richtung sind und als transversale Modenzahl bezeichnet werden.
+Die Grundmode ohne Knoten in transversaler Richtung ist die $TEM_{00}$ Mode. Ihre Intensität folgt einer
+Gaußverteilung
+\begin{equation*}
+    I \left(r\right) = I_0 \text{e}^{-\frac{2 r^2}{\omega^2}} \, ,
+\end{equation*}
+mit der Maximalintensität $I_0$, dem dem Abstand zur optischen Achse $r$ und dem Strahlradius $\omega$
+\begin{equation*}
+    \omega \left(z\right) = \sqrt{1 + \left(\frac{\theta z}{\omega_0}\right)} \, .
+\end{equation*}
+Hierbei ist $\omega_0$ die minimale Strahlweite im Abstand $z$ und $\theta = \frac{\lambda}{\pi} \omega_0$ die Strahldivergenz.
+Die Intensität der $TEM_{01}$ Mode folgt der Verteilung
+\begin{equation*}
+    I \left(r\right) = I_0 \text{e}^{- \frac{2 \left(r - r_1\right)^2}{\omega^2}} \text{e}^{- \frac{2 \left(r + r_1\right)^2}{\omega^2}} \, .
+\end{equation*}
+%Verschieden Moden sind in Abbildung \ref{fig:dfig4} dargestellt.
+%\FloatBarrier
+%    \begin{figure}[h]
+%    \centering
+%    \includegraphics[width=\textwidth]{g1g2.pdf}
+%    \caption{Verschiedene $TEM$-Moden eines Lasers.}
+%    \label{fig:tfig4}
+%    \end{figure}
+%\FloatBarrier
+%\noindent
+
+\subsection*{Das Brewster-Fenster}
+Ein Brewster-Fenster ist ein Polarisator, der sehr verlustarm ist, und sich daher gut für einen Laser eignet.
+Dazu befindet sich das Fenster im Brewster-Winkel zur optischen Achse. Wenn Licht im Brewster-Winkel auf eine Grenzfläche
+trifft, werden nur die zur Einfallsebene senkrechten Anteile reflektiert, sodass das reflektierte Licht linear polarisiert 
+ist. Mit dem Brewster-Fenster kann daher parallel polarisiertes Lichts sehr verlustarm aus der Helium-Neon-Röhre austreten.
+
+\subsection*{Der Helium-Neon-Laser}
+Das Laserrohr ist mit einem Gasgemisch aus Helium und Neon gefüllt, wobei das Verhältnis von Helium zu Neon 5:1 beträgt.
+Das Heliumgas dient als Pumpquelle und das Neongas als aktives Medium. Im Laserrohr befinden sich Elektroden, sodass 
+Gasentladungen stattfinden. Diese regen die Heliumatome in einen metastabilen Zustand an, die dann ihre Energie auf 
+die Heliumatome übertragen, wodurch Besetzungsinversion entsteht.
+
+\section{Aufbau}
+Der Aufbau des Versuchs ist in Abbildung \ref{fig:dfig1} dargestellt. Die einzelnen Elemente des Lasers befinden sich 
+auf einer optischen Schiene, sodass die Spiegel beliebig verstellt werden können. 
+
+Zur Justage ist im Aufbau ein weiter Laser der Wellenlänge $\lambda = 532 \, \si{\nano\meter}$ mit reduzierter 
+Laserleistung ($P_\text{red} = 0.2 \, \si{\milli\watt}$) integriert. Dessen Licht durchläuft eine Blende, auf deren Rückseite sich ein Fadenkreuz befindet, 
+dass zum genauen Einstellen des Helium-Neon-Lasers verwendet wird.
+Der Helium-Neon-Laser besteht aus zwei Resonatorspiegeln mit konvexer Krümmung und Durchmesser $d = 12.7 \, \si{\milli\meter}$ und einem Laserrohr.
+Der Krümmungsradius der Spiegel beträgt $r = 1400 \, \si{\milli\meter}$. Das Laserrohr mit Länge $L = 408 \, \si{\milli\meter}$
+und Durchmesser $d = 1.1 \si{\milli\meter}$ ist mit einem Gemisch aus Helium- und Neongas gefüllt. An seinen Enden 
+befinden sich zwei Brewster-Fenster.
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{aufbau.png}
+\caption{Aufbau des verwendeten Helium-Neon-Lasers \cite{quelle01}.}
+\label{fig:dfig1}
+\end{figure}
+\FloatBarrier
+\noindent
+Zur Untersuchung der Funktionsweise des Laser können außerdem eine Photodiode, ein Polarisator und ein Schirm
+in den Strahlengang eingebracht werden. 
+
+\section{Durchführung}
+Vor Beginn der Messung wird der Laser justiert. 
+Zuerst wird dann zur Bestimmung der Polarisation ein Polarisator in den Strahlengang eingebracht. Mit einer Photodiode
+wird die Intensität des Lasers in Abhängigkeit von der Polarisationsrichtung gemessen, wobei der Polarisator in
+10°-Schritten verstellt wird. 
+Anschließend wird die Stabilitätsbedingung überprüft. Dazu wird der Abstand der Resonatorspiegel in $2 \, \si{\centi\meter}$-Schritten
+variiert und ebenfalls die Intensität gemessen. 
+Außerdem wird die $\text{TEM}_00$-Mode vermessen, wozu eine Streulinse in den Aufbau integriert wird, die den Laserstrahl vergrößert.
+Mit einer Blende, die in $2 \, \si{\milli\meter}$-Schritten verschoben wird, wird jeweils ein kleiner Teil des Lichts 
+herausgefiltert, dessen Intensität gemessen wird. 
+Zur Untersuchung der $\text{TEM}_01$-Mode wird zusätzlich sowohl ein dünner Draht als auch ein Haar in den Strahl gebracht.
+%Ich weiß nicht ob der Satz so reicht aber ich will jetzt irgendwie auch nicht so halb hier schon die Diskussion schreiben :D
+Nach dieser Messung werden drei verschiedene Gitter mit Gitterkonstanten
+%Gitterkonstanten einfügen $d = 100 
+in den Strahlengang eingebracht, um die Wellenlänge des Lasers bestimmen zu können. Dazu wird das Beugungsbild 
+auf einen Schirm abgebildet und jeweils der Abstand zum Hauptmaximum gemessen.
+
+
 \section{Auswertung}
 \subsection{Überprüfung der Stabilitätsbedingung}
 Die Messwerte zur Überprüfung der Stabilitätsbedingung sind in der Tabelle \ref{tab:atab1} des Anhangs zu finden.

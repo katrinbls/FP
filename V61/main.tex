@@ -34,7 +34,8 @@ Abbildung \ref{fig:tfig1} schematisch dargestellt.
     \end{figure}
 \FloatBarrier
 \noindent
-Vereinfacht werden nur zwei Niveaus mit Besetzungszahlen $n_1$ und $n_2$ betrachtet. 
+Es wird nun ein vereinfachtes Modell mit zwei Niveaus mit Besetzungszahlen $n_1$ und $n_2$ betrachtet. 
+%Vereinfacht werden nur zwei Niveaus mit Besetzungszahlen $n_1$ und $n_2$ betrachtet. 
 Absorption tritt auf, wenn ein einfallendes Photon genau die Energie des Übergangs besitzt. Das Photon wird dann von einem
 Elektron absorbiert, welches dadurch in ein höheres Energieniveau angeregt wird.
 Bei spontaner Emission findet ein Übergang eines Elektrons in ein niedrigeres Energieniveau statt. Die dabei freiwerdende
@@ -48,13 +49,20 @@ Dazu muss das energetisch höhere Niveau stärker besetzt sein als das energetis
 Besetzungsinversion wird dem aktiven Medium mit der Pumpquelle ständig Energie zugeführt, wodurch die Besetzungswahrscheinlichkeit
 des höheren Niveaus steigt. 
 
-Im hier beschriebenen Zwei-Niveau-System ist es jedoch gar nicht möglich, die Besetzungsinversion zu realisieren,
-da der Pumpvorgang direkt zwischen den beiden Niveaus stattfindet und die Besetzungszahl des oberen Niveaus maximal
-gleich der des unteren Niveaus wird. Dann ist jedoch die Wahrscheinlichkeit, dass ein Photon von einem Atom im oberen 
-Niveau durch stimulierte Emission abgegeben wird gleich der Wahrscheinlichkeit, dass ein Atom im unteren Niveau ein 
-Photon absorbiert. Die spontane Emission führt dann dazu, dass das obere Niveau immer weniger besetzt ist als das untere.
-Notwendig ein weiteres Energieniveau $E_3$, sodass der Pumpvorgang zwischen $E_1$ und $E_3$ stattfindet. Wichtig ist,
-dass der Übergang $E_3 \rightarrow E_2$ deutlich schneller ist als der Übergang $E_2 \rightarrow E_1$.
+Im hier beschriebenen Zwei-Niveau-System ist es jedoch gar nicht möglich, die Besetzungsinversion zu realisieren.
+Der Pumpvorgang findet hier direkt zwischen den beiden Niveaus statt, wodurch die Besetzung des oberen Niveaus zwar erhöht wird,
+aufgrund der kurzen Relaxationszeit durch spontane Emission jedoch auch unmittelbar wieder absinkt, sodass 
+maximal eine Gleichbesetzung beider Niveaus erreicht werden kann.
+
+Notwendig ist daher ein weiteres Energieniveau $E_3$. Der Pumpvorgang findet nun zwischen $E_1$ und $E_3$ statt.
+Ist der Übergang $E_3 \rightarrow E_2$ deutlich schneller als der Übergang $E_2 \rightarrow E_1$, 
+kann eine höhere Besetzung von $E_2$ als von $E_1$ erreicht werden.
+%sodass der Pumpvorgang zwischen $E_1$ und $E_3$ stattfindet. Wichtig ist,
+%dass der Übergang $E_3 \rightarrow E_2$ deutlich schneller ist als der Übergang $E_2 \rightarrow E_1$.
+%Dann ist jedoch die Wahrscheinlichkeit, dass ein Photon von einem Atom im oberen 
+%Niveau durch stimulierte Emission abgegeben wird gleich der Wahrscheinlichkeit, dass ein Atom im unteren Niveau ein 
+%Photon absorbiert. Spontane Emission führt dann dazu, dass das obere Niveau immer weniger besetzt ist als das untere.
+
 
 \subsection*{Optischer Resonator}
 Die Verstärkung des Lichts wächst exponentiell mit dem Laufweg durch das aktive Medium an, weswegen mit dem 
@@ -103,18 +111,19 @@ Mode. Durch störende Einflüsse wie Verkippungen der Spiegel können auch trans
 Die Moden eines Lasers werden mit $TEM_{lpq}$ gekennzeichnet, wobei $TEM$ abkürzend für \textit{Transverse Electric Mode} ist
 und $l$ und $p$ die Knoten in $x$- und $y$-Richtung sind und als transversale Modenzahl bezeichnet werden.
 Die Grundmode ohne Knoten in transversaler Richtung ist die $TEM_{00}$ Mode. Ihre Intensität folgt einer
-Gaußverteilung
+Gaußverteilung mit der Leistung
 \begin{equation*}
-    I \left(r\right) = I_0 \text{e}^{-\frac{2 r^2}{\omega^2}} \, ,
+    \symup{\Phi} \left(r\right) = \symup{\Phi}_0 \text{e}^{-\frac{2 r^2}{\omega^2}} \, ,
 \end{equation*}
-mit der Maximalintensität $I_0$, dem dem Abstand zur optischen Achse $r$ und dem Strahlradius $\omega$
+mit der Maximalintensität $\symup{\Phi}_0$, dem dem Abstand zur optischen Achse $r$ und dem Strahlradius $\omega$
 \begin{equation*}
     \omega \left(z\right) = \sqrt{1 + \left(\frac{\theta z}{\omega_0}\right)} \, .
 \end{equation*}
 Hierbei ist $\omega_0$ die minimale Strahlweite im Abstand $z$ und $\theta = \frac{\lambda}{\pi} \omega_0$ die Strahldivergenz.
-Die Intensität der $TEM_{01}$ Mode folgt der Verteilung
+
+Die Intensität der $TEM_{01}$ Mode folgt der einer doppelten Gaußverteilung mit der Leistung
 \begin{equation*}
-    I \left(r\right) = I_0 \text{e}^{- \frac{2 \left(r - r_1\right)^2}{\omega^2}} \text{e}^{- \frac{2 \left(r + r_1\right)^2}{\omega^2}} \, .
+    \symup{\Phi} \left(r\right) = \symup{\Phi}_0 \text{e}^{- \frac{2 \left(r - r_1\right)^2}{\omega^2}} \text{e}^{- \frac{2 \left(r + r_1\right)^2}{\omega^2}} \, .
 \end{equation*}
 %Verschieden Moden sind in Abbildung \ref{fig:dfig4} dargestellt.
 %\FloatBarrier
@@ -137,8 +146,21 @@ ist. Mit dem Brewster-Fenster kann daher parallel polarisiertes Lichts sehr verl
 Das Laserrohr ist mit einem Gasgemisch aus Helium und Neon gefüllt, wobei das Verhältnis von Helium zu Neon 5:1 beträgt.
 Das Heliumgas dient als Pumpquelle und das Neongas als aktives Medium. Im Laserrohr befinden sich Elektroden, sodass 
 Gasentladungen stattfinden. Diese regen die Heliumatome in einen metastabilen Zustand an, die dann ihre Energie auf 
-die Neonatome übertragen, wodurch Besetzungsinversion entsteht.
-
+die Neonatome übertragen
+\begin{equation*}
+    \text{He}^{*} + \text{Ne} \rightarrow \text{He} + \text{Ne}^{*} + \Delta E \, .
+\end{equation*}
+Das Niveauschema des Helium-Neon-Lasers ist in Abbildung \ref{fig:tfig8} dargestellt.
+Der Übergang $3s_2 \rightarrow 2p_4$ erzeugt die rote Laserlinie bei $632.8 \, \si{\nano\meter}$.
+\FloatBarrier
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{henelaser.png}
+    \caption{Niveauschema Helium-Neon-Lasers \cite{quelle01}.}
+    \label{fig:tfig8}
+    \end{figure}
+\FloatBarrier
+\noindent
 Mit einem Gitter kann über Interferenz die Wellenlänge des Lasers bestimmt werden. Aus der Beugungsbedingung 
 \begin{equation*}
     n \lambda = a \cdot \sin \left(\theta \right)
@@ -163,32 +185,36 @@ Der Krümmungsradius der Spiegel beträgt $r = 1400 \, \si{\milli\meter}$. Das L
 und Durchmesser $d = 1.1 \, \si{\milli\meter}$ ist mit einem Gemisch aus Helium- und Neongas gefüllt. An seinen Enden 
 befinden sich zwei Brewster-Fenster.
 \FloatBarrier
-\begin{figure}[h]
-\centering
-\includegraphics[width=\textwidth]{aufbau.png}
-\caption{Aufbau des verwendeten Helium-Neon-Lasers \cite{quelle01}.}
-\label{fig:dfig1}
-\end{figure}
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{aufbau.png}
+    \caption{Aufbau des verwendeten Helium-Neon-Lasers \cite{quelle01}.}
+    \label{fig:dfig1}
+    \end{figure}
 \FloatBarrier
 \noindent
 Zur Untersuchung der Funktionsweise des Laser können außerdem eine Photodiode, ein Polarisator und ein Schirm
 in den Strahlengang eingebracht werden. 
 
 \section{Durchführung}
-Vor Beginn der Messung wird der Laser justiert. 
+Vor Beginn der Messung wird der Laser justiert. Für die Besetzungsinversion zu erzeugen, ist an den Elektroden des
+Laserrohrs ein Strom von $6.52 \, \si{\milli\ampere}$ angelegt.
 Dann wird zuerst zur Bestimmung der Polarisation ein Polarisator in den Strahlengang eingebracht. Mit einer Photodiode
-wird die Intensität des Lasers in Abhängigkeit von der Polarisationsrichtung gemessen, wobei der Polarisator in
+wird die Leistung des Lasers in Abhängigkeit von der Polarisationsrichtung gemessen, wobei der Polarisator in
 10°-Schritten verstellt wird. 
+Außerdem wird die Nullleistung bei ausgeschaltetem Laser gemessen.
+
 Anschließend wird die Stabilitätsbedingung überprüft. Dazu wird der Abstand der Resonatorspiegel in $2 \, \si{\centi\meter}$-Schritten
-variiert und ebenfalls die Intensität gemessen. 
+variiert und ebenfalls die Leistung gemessen. 
 Außerdem wird die $\text{TEM}_{00}$-Mode vermessen, wozu eine Streulinse in den Aufbau integriert wird, die den Laserstrahl vergrößert.
 Mit einer Blende, die in $2 \, \si{\milli\meter}$-Schritten verschoben wird, wird jeweils ein kleiner Teil des Lichts 
-herausgefiltert, dessen Intensität gemessen wird. 
+herausgefiltert, dessen Strahlungsleistung gemessen wird. 
+
 Zur Untersuchung der $\text{TEM}_{01}$-Mode wird zusätzlich sowohl ein dünner Draht als auch ein Haar in den Strahlengang gebracht.
 %Ich weiß nicht ob der Satz so reicht aber ich will jetzt irgendwie auch nicht so halb hier schon die Diskussion schreiben :D
 Nach dieser Messung werden drei verschiedene Gitter mit Gitterkonstanten $d = 100 \, \text{Linien} / \si{\milli\meter}$, $d = 600 \, \text{Linien} / \si{\milli\meter}$ und $d = 1200 \, \text{Linien} / \si{\milli\meter}$
-in den Strahlengang eingebracht, um die Wellenlänge des Lasers bestimmen zu können. Dazu wird das Beugungsbild 
-auf einen Schirm abgebildet und jeweils der Abstand zum Hauptmaximum gemessen.
+in den Strahlengang eingebracht. Um die Wellenlänge des Lasers bestimmen zu können, wird das Beugungsbild 
+auf einem Schirm abgebildet und jeweils der Abstand zum Hauptmaximum sowie der Abstand von Schirm und Gitter gemessen.
 
 
 \section{Auswertung}

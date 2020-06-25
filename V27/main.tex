@@ -161,11 +161,11 @@ Der Versuchsaufbau ist in Abbildung \ref{fig:tfig5} dargestellt.
 \label{fig:tfig5}
 \end{figure}
 \FloatBarrier
-Zur Betrachtung des Zeeman-Effekts wurde eine Cadium-Lampe verwendet, welche sich zwischen den Polschuhen eines Elektromagneten befindet. 
-Das Licht wird mittels eines Geradsichtprismas in die Spektralfarben aufgespaltet, sodass der normale
+Zur Betrachtung des Zeeman-Effekts wurde eine Cadmium-Lampe verwendet, welche sich zwischen den Polschuhen eines Elektromagneten befindet. 
+Das Licht wird mittels eines Geradsichtprismas in die Spektralfarben aufgespalten, sodass der normale
 Zeeman-Effekt anhand der roten und der anomale Zeeman-Effekt anhand der blauen Spektrallinien untersucht werden kann. Mithilfe eines Polarisationsfilters können die linear polarisierten $\pi$-Komponenten
 nach Bedarf herausgefiltert werden. Der Lichtstrahl wird auf die Eintrittsfläche der Lummer-Gehrcke Platte projiziert, durch diese wird ein Interferenzmuster erzeugt, 
-welches mittels einer Digitalkamera aufgenommen werden kann. Im Folgenen soll noch einmal genauer auf die Lummer-Gehrcke-Platte und dessen Funktionsweise eingegangen werden.
+welches mittels einer Digitalkamera aufgenommen werden kann. Im Folgenden soll noch einmal genauer auf die Lummer-Gehrcke-Platte und dessen Funktionsweise eingegangen werden.
 
 \subsection*{Die Lummer-Gehrcke-Platte}
 \FloatBarrier
@@ -176,8 +176,8 @@ welches mittels einer Digitalkamera aufgenommen werden kann. Im Folgenen soll no
 \label{fig:tfig6}
 \end{figure}
 \FloatBarrier
-Die Funktionsweise der Lummer-Gehrcke-Platte ist schematisch in Abbildung \ref{fig:tfig6} dargestellt. Das einfallende Licht wird innerhalb der Platte mehrmals totalreflektiert,
-während bei jeder Totalreflektion ein Teil des Lichtstrahls transmittiert wird. Zwischen den austretenden Strahlenbündeln kommt es zu Interferenz. Konstruktive Interferenz tritt nur dann
+Die Funktionsweise der Lummer-Gehrcke-Platte ist schematisch in Abbildung \ref{fig:tfig6} dargestellt. Das einfallende Licht wird innerhalb der Platte mehrmals fast totalreflektiert,
+während bei jeder Reflektion ein Teil des Lichtstrahls transmittiert wird. Zwischen den austretenden Strahlenbündeln kommt es zu Interferenz. Konstruktive Interferenz tritt nur dann
 auf, wenn die Bragg-Bedingung
 \begin{equation}
 2d \cos(\theta) = n \lambda
@@ -219,7 +219,7 @@ der Länge $L = 120 \, \si{\milli\meter}$ ergeben sich mit Formel \eqref{eq:lamb
     \label{tab:atab0}
     \begin{tabular}{c c c c}
         \toprule
-        {$\lambda / \si{\nano\meter}$} & {$n$} & {$\delta \lambda / 10^{-11}\, \si{\meter}$} & {$A$}\\
+        {$\lambda / \si{\nano\meter}$} & {$n$} & {$\Delta \lambda_D / 10^{-11}\, \si{\meter}$} & {$A$}\\
         \midrule
         643.8 & 1.4567 & 4.891 & 209129 \\
         480.0 & 1.4635 & 2.695 & 285458 \\
@@ -232,9 +232,10 @@ Es werden außerdem die Landé-Faktoren der roten und blauen Zeeman-Linie sowie 
 Die Landé-Faktoren berechnen sich dabei nach Formel \eqref{eq:lande}. Beim normalen Zeeman-Effekt ist $S = 0$ und daher
 $J = L$, weswegen immer $g_i = 1$ gilt. Der Landé-Faktor des Übergangs ist $g_{ij} = m_i g_i - m_j g_j$ und die Aufspaltung
 berechnet sich mit
-\begin{equation*}
+\begin{equation}
+    \label{eq:afrika}
     \Delta E = g_{ij} \mu_B B \, .
-\end{equation*}
+\end{equation}
 \FloatBarrier
 \begin{table}[h]
     \centering
@@ -282,6 +283,39 @@ berechnet sich mit
             {}         & -1 & 2 & 0  & {$\frac{3}{2}$} & {$-2 \mu_B B$} \\
             \bottomrule
         \end{tabular}
+\end{table}
+\FloatBarrier
+\noindent
+Da die Messung nur für Aufspaltungen innerhalb von $\Delta \lambda_D$ sinnvoll ist, gilt als Bedingung für die optimale 
+Aufspaltung $\delta \lambda$
+\begin{equation*}
+    4 \delta \lambda = \Delta \lambda_D \, .
+\end{equation*}
+Bei einer Wellenlängenänderung umd $\delta \lambda$ gilt für die Energieänderung
+\begin{equation*}
+    \Delta E = - \frac{\text{hc}}{\lambda^2} \delta \lambda \, .
+\end{equation*}
+Aus Gleichung \eqref{eq:afrika} folgt für das optimale Magnetfeld die Formel
+\begin{equation*}
+    B_{\text{opt}} = \frac{\Delta \lambda_D}{4} \frac{\text{hc}}{\lambda^2 g_{ij} \mu_B} \, .
+\end{equation*}
+Die Werte für das optimale Magnetfeld für die untersuchten Wellenlängen sind in \ref{tab:tabelle} tabelliert. Es werden
+dabei die Werte aus Tabelle \ref{tab:atab0} verwendet.
+\FloatBarrier
+\begin{table}[h]
+    \centering
+    \caption{Optimale Magnenetfeldstärke $B_{\text{opt}}$ für rotes und blaues Licht.}
+    \label{tab:tabelle}
+    \begin{tabular}{c c c}
+        \toprule
+        {$\lambda$} & {$\left|g_{ij}\right|$} & {$B_{\text{opt}} / \text{mT}$} \\
+        \midrule
+        643.8 & 1  & 631.9 \\
+        480.0 & 2 & 313.2 \\
+              & $\frac{1}{2}$ & 1252.7 \\
+              & $\frac{3}{2}$ & 417.6 \\
+        \bottomrule
+    \end{tabular}
 \end{table}
 \FloatBarrier
 \noindent
@@ -346,6 +380,20 @@ eine Ausgleichsrechnung durchgeführt, wobei als Funktion ein Polynom dritten Gr
     \label{fig:afig1}
 \end{figure}
 \FloatBarrier
+Die Fitparameter der Kurve bei bei absteigendem Magentfeld (untere Abbildung) ergeben sich zu 
+\begin{align*}
+    a &= \left(-1.10 \pm 0.22\right) \, \frac{\text{mT}}{\text{A}^3} \\
+    b &= \left(4.7\pm 1.9\right) \, \frac{\text{mT}}{\text{A}^2} \\
+    c &= \left(86 \pm 5\right) \, \frac{\text{mT}}{\text{A}} \\
+    d &= \left(7.5 \pm 3.0\right) \, \text{mT} \, ,
+\end{align*}
+sodass die Magnetfeldstärke bei einem bestimmten Strom $I$ gemäß
+\begin{equation}
+    \label{eq:tansania}
+    B(I) = a I^3 + b I^2 + c I + d 
+\end{equation}
+berechnet werden kann.
+
 \subsection{Rote Spektrallinie}
 Mit der roten Spektrallinie wird der normale Zeeman-Effekt untersucht, weswegen nur die $\sigma$-Komponente betrachtet wird.
 Der $\pi$-Übergang wird wegen $\Delta m = 0$ nicht aufgespalten.
@@ -360,7 +408,8 @@ Die Aufnahmen bei $B = 0$ (oberes Bild) und $B \neq 0$ (unteres Bild) sind in Ab
 \FloatBarrier
 Zur Berechnung der Aufspaltung $\delta \lambda$ wird in der Aufnahme mit ausgeschaltetem Magnetfeld \ref{fig:afig2} der 
 Abstand der Spektrallinien $\Delta s$ bestimmt. Die Verschiebung $\delta s$ wird in der Aufnahme mit eingeschaltetem 
-Magnetfeld mit Magnetfeldstärke $B = 421.3 \,\si{\milli\tesla}$ vermessen. Die Messung erfolgt in Pixeln (px).
+Magnetfeld vermessen. Die Stromstärke ist $I = 5 \, \si{\ampere}$, woraus mit Gleichung \eqref{eq:tansania} eine Magnetfeldstärke
+von $B = \left(420.0 \pm 60\right) \,\si{\milli\tesla}$ folgt. Die Messung erfolgt in Pixeln (px).
 Die Aufspaltung $\delta \lambda$ berechnet 
 sich dann durch
 \begin{equation}
@@ -378,24 +427,24 @@ Diese gemessenen Werte für $\delta s$ und $\Delta s$ sowie jeweils der berechne
         \toprule
         {$\Delta s / \text{px}$} & {$\delta s / \text{px}$} & {$\delta \lambda / 10^{-11}\, \si{\meter}$}\\
         \midrule
-        15 & 5 & 0.8152 \\ 
-        14 & 5 & 0.8734 \\
-        15 & 6 & 0.9782 \\
-        14 & 6 & 1.0481 \\
-        16 & 6 & 0.9171 \\
-        15 & 6 & 0.9782 \\
-        16 & 6 & 0.9171 \\ 
-        16 & 6 & 0.9171 \\
-        17 & 6 & 0.8631 \\ 
-        17 & 7 & 1.0070 \\ 
-        17 & 7 & 1.0070 \\
-        18 & 7 & 0.9510 \\
-        19 & 7 & 0.9010 \\
-        19 & 8 & 1.0297 \\
-        20 & 8 & 0.9782 \\
-        21 & 8 & 0.9316 \\
-        21 & 8 & 0.9316 \\
-        23 & 9 & 0.9569 \\
+        15 $\pm$ 5 & 5 $\pm$ 4 & 0.8152 \\ 
+        14 $\pm$ 5 & 5 $\pm$ 4 & 0.8734 \\
+        15 $\pm$ 5 & 6 $\pm$ 4 & 0.9782 \\
+        14 $\pm$ 5 & 6 $\pm$ 4 & 1.0481 \\
+        16 $\pm$ 5 & 6 $\pm$ 4 & 0.9171 \\
+        15 $\pm$ 5 & 6 $\pm$ 4 & 0.9782 \\
+        16 $\pm$ 5 & 6 $\pm$ 4 & 0.9171 \\ 
+        16 $\pm$ 5 & 6 $\pm$ 4 & 0.9171 \\
+        17 $\pm$ 5 & 6 $\pm$ 4 & 0.8631 \\ 
+        17 $\pm$ 5 & 7 $\pm$ 4 & 1.0070 \\ 
+        17 $\pm$ 5 & 7 $\pm$ 4 & 1.0070 \\
+        18 $\pm$ 5 & 7 $\pm$ 4 & 0.9510 \\
+        19 $\pm$ 5 & 7 $\pm$ 4 & 0.9010 \\
+        19 $\pm$ 5 & 8 $\pm$ 4 & 1.0297 \\
+        20 $\pm$ 5 & 8 $\pm$ 4 & 0.9782 \\
+        21 $\pm$ 5 & 8 $\pm$ 4 & 0.9316 \\
+        21 $\pm$ 5 & 8 $\pm$ 4 & 0.9316 \\
+        23 $\pm$ 5 & 9 $\pm$ 4 & 0.9569 \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -405,7 +454,7 @@ Es wird nun mit dem $\texttt{Python}$-Paket $\texttt{NumPy}$ der Mittelwert aus 
 berechneten Werten für $\delta \lambda$ bestimmt. Der Fehler berechnet sich hierbei nach Gauß'scher Fehlerfortpflanzung,
 die ebenfalls mit dem Paket $\texttt{NumPy}$ durchgeführt wird. Es ergibt sich der Wert
 \begin{equation*}
-    \delta \lambda = \SI{0.9445(0143)e-11}{\meter}
+    \delta \lambda = \SI{9.4(15)e-12}{\meter}
 \end{equation*}
 Zur Berechnung des Landé-Faktors $g$ muss außerdem die Energiedifferenz $\Delta E$ bestimmt werden, wozu die Energie
 \begin{equation*}
@@ -422,7 +471,7 @@ Mit Gleichung \eqref{eq:energie} folgt dann für den Landé-Faktor die Formel
 \end{equation}
 mit der sich für den Landé-Faktor der Wert
 \begin{equation*}
-    g = 1.159\pm 0.018
+    g = 1.18 \pm 0.25
 \end{equation*}
 ergibt.
 
@@ -451,32 +500,32 @@ $\delta s$ und $\Delta s$ sowie jeweils der berechnete Wert für $\delta \lambda
         \toprule
         {$\Delta s / \text{px}$} & {$\delta s / \text{px}$} & {$\delta \lambda / 10^{-11}\, \si{\meter}$}\\
         \midrule
-        116 & 74 & 0.8596 \\
-        114 & 64 & 0.7565 \\
-        111 & 58 & 0.7041 \\
-        107 & 56 & 0.7052 \\
-        104 & 51 & 0.6608 \\
-        99  & 51 & 0.6942 \\
-        97  & 48 & 0.6668 \\
-        94  & 48 & 0.6881 \\
-        92  & 49 & 0.7177 \\
-        90  & 48 & 0.7187 \\
-        87  & 50 & 0.7744 \\
-        86  & 48 & 0.7521 \\
-        83  & 49 & 0.7955 \\
-        82  & 48 & 0.7888 \\
-        81  & 46 & 0.7652 \\
-        79  & 45 & 0.7676 \\
-        76  & 44 & 0.7801 \\
-        76  & 43 & 0.7624 \\
-        75  & 42 & 0.7546 \\
-        74  & 41 & 0.7466 \\
-        71  & 42 & 0.7971 \\
-        70  & 40 & 0.7700 \\
-        70  & 38 & 0.7315 \\
-        69  & 37 & 0.7226 \\
-        66  & 39 & 0.7963 \\
-        68  & 40 & 0.7926 \\
+        116$\pm$ 33  & 74 $\pm$ 23 & 0.8596 \\
+        114$\pm$ 33  & 64 $\pm$ 23 & 0.7565 \\
+        111$\pm$ 33  & 58 $\pm$ 23 & 0.7041 \\
+        107$\pm$ 33  & 56 $\pm$ 23 & 0.7052 \\
+        104$\pm$ 33  & 51 $\pm$ 23 & 0.6608 \\
+        99 $\pm$ 33  & 51 $\pm$ 23 & 0.6942 \\
+        97 $\pm$ 33  & 48 $\pm$ 23 & 0.6668 \\
+        94 $\pm$ 33  & 48 $\pm$ 23 & 0.6881 \\
+        92 $\pm$ 33  & 49 $\pm$ 23 & 0.7177 \\
+        90 $\pm$ 33  & 48 $\pm$ 23 & 0.7187 \\
+        87 $\pm$ 33  & 50 $\pm$ 23 & 0.7744 \\
+        86 $\pm$ 33  & 48 $\pm$ 23 & 0.7521 \\
+        83 $\pm$ 33  & 49 $\pm$ 23 & 0.7955 \\
+        82 $\pm$ 33  & 48 $\pm$ 23 & 0.7888 \\
+        81 $\pm$ 33  & 46 $\pm$ 23 & 0.7652 \\
+        79 $\pm$ 33  & 45 $\pm$ 23 & 0.7676 \\
+        76 $\pm$ 33  & 44 $\pm$ 23 & 0.7801 \\
+        76 $\pm$ 33  & 43 $\pm$ 23 & 0.7624 \\
+        75 $\pm$ 33  & 42 $\pm$ 23 & 0.7546 \\
+        74 $\pm$ 33  & 41 $\pm$ 23 & 0.7466 \\
+        71 $\pm$ 33  & 42 $\pm$ 23 & 0.7971 \\
+        70 $\pm$ 33  & 40 $\pm$ 23 & 0.7700 \\
+        70 $\pm$ 33  & 38 $\pm$ 23 & 0.7315 \\
+        69 $\pm$ 33  & 37 $\pm$ 23 & 0.7226 \\
+        66 $\pm$ 33  & 39 $\pm$ 23 & 0.7963 \\
+        68 $\pm$ 33  & 40 $\pm$ 23 & 0.7926 \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -484,11 +533,11 @@ $\delta s$ und $\Delta s$ sowie jeweils der berechnete Wert für $\delta \lambda
 \noindent
 Als Mittelwert ergibt sich
 \begin{equation*}
-    \delta \lambda = \SI{0.7488(0091)e-11}{\meter} \, .
+    \delta \lambda = \SI{7.5(09)e-12}{\meter} \, .
 \end{equation*}
 Mit der obigen Formel \eqref{eq:landee} ergibt sich für den Landé-Faktor
 \begin{equation*}
-    g = 0.680 \pm 0.008 \, .
+    g = 0.69 \pm 0.09 \, .
 \end{equation*}
 
 \subsubsection*{$\sigma$-Linie}
@@ -502,7 +551,7 @@ bei $B = 0$ (oberes Bild) und $B \neq 0$ (unteres Bild)
     \label{fig:afig4}
 \end{figure}
 \FloatBarrier
-Die für die $\sigma$-Linie bei $B = 306.8 \, \si{\milli\tesla}$ bestimmten Werte sind in Tabelle \ref{tab:atab4} dergestellt.
+Die für die $\sigma$-Linie bei $I = 3.5 \, \si{\ampere}$, also nach Gleichung \eqref{eq:tansania} $B = \left(317.0 \pm 30 \right) \, \si{\milli\tesla}$ bestimmten Werte sind in Tabelle \ref{tab:atab4} dergestellt.
 \FloatBarrier
 \begin{table}[h]
     \centering
@@ -512,29 +561,29 @@ Die für die $\sigma$-Linie bei $B = 306.8 \, \si{\milli\tesla}$ bestimmten Wert
         \toprule
         {$\Delta s / \text{px}$} & {$\delta s / \text{px}$} & {$\delta \lambda / 10^{-11}\, \si{\meter}$}\\
         \midrule
-        11 & 6  & 0.7350 \\
-        11 & 6  & 0.7350 \\
-        11 & 6  & 0.7350 \\
-        12 & 6  & 0.6738 \\
-        12 & 6  & 0.6738 \\
-        12 & 6  & 0.6738 \\
-        12 & 6  & 0.6738 \\
-        12 & 6  & 0.6738 \\
-        13 & 6  & 0.6219 \\
-        13 & 7  & 0.7256 \\
-        13 & 7  & 0.7256 \\
-        14 & 7  & 0.6736 \\
-        13 & 7  & 0.7256 \\
-        14 & 7  & 0.6736 \\
-        15 & 7  & 0.6288 \\
-        14 & 7  & 0.6736 \\
-        15 & 8  & 0.7187 \\
-        15 & 8  & 0.7187 \\
-        16 & 8  & 0.6738 \\
-        16 & 8  & 0.6738 \\
-        17 & 9  & 0.7134 \\
-        17 & 10 & 0.7926 \\
-        18 & 9  & 0.6738 \\
+        11 $\pm$ 5 & 6  $\pm$ 3 & 0.7350 \\
+        11 $\pm$ 5 & 6  $\pm$ 3 & 0.7350 \\
+        11 $\pm$ 5 & 6  $\pm$ 3 & 0.7350 \\
+        12 $\pm$ 5 & 6  $\pm$ 3 & 0.6738 \\
+        12 $\pm$ 5 & 6  $\pm$ 3 & 0.6738 \\
+        12 $\pm$ 5 & 6  $\pm$ 3 & 0.6738 \\
+        12 $\pm$ 5 & 6  $\pm$ 3 & 0.6738 \\
+        12 $\pm$ 5 & 6  $\pm$ 3 & 0.6738 \\
+        13 $\pm$ 5 & 6  $\pm$ 3 & 0.6219 \\
+        13 $\pm$ 5 & 7  $\pm$ 3 & 0.7256 \\
+        13 $\pm$ 5 & 7  $\pm$ 3 & 0.7256 \\
+        14 $\pm$ 5 & 7  $\pm$ 3 & 0.6736 \\
+        13 $\pm$ 5 & 7  $\pm$ 3 & 0.7256 \\
+        14 $\pm$ 5 & 7  $\pm$ 3 & 0.6736 \\
+        15 $\pm$ 5 & 7  $\pm$ 3 & 0.6288 \\
+        14 $\pm$ 5 & 7  $\pm$ 3 & 0.6736 \\
+        15 $\pm$ 5 & 8  $\pm$ 3 & 0.7187 \\
+        15 $\pm$ 5 & 8  $\pm$ 3 & 0.7187 \\
+        16 $\pm$ 5 & 8  $\pm$ 3 & 0.6738 \\
+        16 $\pm$ 5 & 8  $\pm$ 3 & 0.6738 \\
+        17 $\pm$ 5 & 9  $\pm$ 3 & 0.7134 \\
+        17 $\pm$ 5 & 10 $\pm$ 3 & 0.7926 \\
+        18 $\pm$ 5 & 9  $\pm$ 3 & 0.6738 \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -542,11 +591,11 @@ Die für die $\sigma$-Linie bei $B = 306.8 \, \si{\milli\tesla}$ bestimmten Wert
 \noindent
 Es ergibt sich der Mittelwert
 \begin{equation*}
-    \delta \lambda = \SI{0.6951(0081)e-11}{\meter} \, 
+    \delta \lambda = \SI{7.0(08)e-12}{\meter} \, 
 \end{equation*}
 mit dem sich wieder mit Formel \eqref{eq:landee} der Landé-Faktor ergibt
 \begin{equation*}
-    g = 2.106 \pm 0.025 \, .
+    g = 2.04 \pm 0.31 \, .
 \end{equation*}
 
 \section{Diskussion}
@@ -561,9 +610,9 @@ Abweichung in Tabelle \ref{tab:distab1} angegeben.
         \toprule
         {$\text{Linie}$} & {$g_\text{Theorie}$} & {$g_\text{Experiment}$} & {$\text{Abweichung}\, / \%$}\\
         \midrule
-        {$\text{rot}$}          & 1    & 1.159 \pm 0.018 & 15.9 \\
-        {$\text{blau:}\, \pi$}    & 0.5  & 0.640 \pm 0.007 & 28.0 \\
-        {$\text{blau:}\, \sigma$} & 1.75 & 2.106 \pm 0.025 & 20.3 \\
+        {$\text{rot}$}            & 1    & 1.18  \pm 0.25 & 18.0 \\
+        {$\text{blau:}\, \pi$}    & 0.5  & 0.69  \pm 0.09 & 38.0 \\
+        {$\text{blau:}\, \sigma$} & 1.75 & 2.04  \pm 0.31 & 16.6 \\
         \bottomrule
     \end{tabular}
 \end{table}

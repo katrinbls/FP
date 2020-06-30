@@ -5,7 +5,7 @@
 \maketitle
 
 \section{Zielsetzung}
-In diesem Versuch soll mit dem Verfahren des optischen Pumpens die Energiedifferenz der Zeeman-Aufspaltung gemessen und aus dieser der Lande-Faktor des Alkalimetalls Rubidium bestimmt werden.
+In diesem Versuch soll mit dem Verfahren des optischen Pumpens die Energiedifferenz der Zeeman-Aufspaltung gemessen und aus dieser der Landé-Faktor und Kernspin des Alkalimetalls Rubidium bestimmt werden.
 
 
 \section{Theorie}
@@ -17,7 +17,7 @@ Demnach ist bei einer festen Temperatur $T$ das Verhältnis der Besetzungszahlen
 wobei $g_i$ die statistischen Gewichte sind, welche angeben, wie viele Zustände der Energie $E_i$ zugeordnet werden können.
 Aus \eqref{eq:boltzmann} wird deutlich, dass die relative Besetzung des Niveaus mit höherer Energie, selbst für hohe Temperaturen nicht größer werden kann als die des Niveaus geringerer Energie.
 Eine sogenannte Besetzungsinversion kann also nicht allein durch das Zuführen von Wärme generiert werden.
-Die Methode des \textit{optischen Pumpens} bietet eine Möglichkeit durch induzierte Strahlungsübergänge Atome niedriger Energieniveaus in höhere zu pumpen und somit eine Besetzungsinversion zu erzeugen.
+Die Methode des \textit{optischen Pumpens} bietet eine Möglichkeit, durch induzierte Strahlungsübergänge Atome niedriger Energieniveaus in höhere zu pumpen und somit eine Besetzungsinversion zu erzeugen.
 
 \subsection{Der Zeeman-Effekt}
 Mit jedem Drehimpuls $\vec{I}$ geht ein magnetisches Moment
@@ -25,26 +25,26 @@ Mit jedem Drehimpuls $\vec{I}$ geht ein magnetisches Moment
 \vec{\mu}_I = -g_I \mu_B \vec{I}
 \end{equation}
 einher, welches von einem externen Magnetfeld beeinflusst wird.
-Hierbei ist $g_I$ der Landefaktor und $\mu_B$ das Borh'sche Magneton.
+Hierbei ist $g_I$ der Landefaktor und $\mu_B$ das Bohr'sche Magneton.
 Ein Elektron besitzt zwei Arten von Drehimpulsen, den Bahndrehimpuls $\vec{L}$ und den Spin $\vec{S}$, welche zu einem Gesamtdrehimpuls $\vec{J} = \vec{L} + \vec{S}$ koppeln.
 Demnach ergibt sich für das magnetische Moment des Elektrons
 \begin{equation}
 \vec{\mu}_J = \vec{\mu}_L + \vec{\mu}_S \, .
 \end{equation}
 Dieses führt eine Präzessionsbewegung um die $\vec{J}$-Achse aus, sodass die senkrechte Komponente von $\vec{\mu}_J$ im zeitlichen Mittel verschwindet.
-Der Betrag der parallen Komponente unterliegt einer Quantelung, sodass dieser nur diskrete Werte der Form
+Der Betrag der parallelen Komponente unterliegt einer Quantelung, sodass dieser nur diskrete Werte der Form
 \begin{equation}
 \mu_{J\parallel} = - M_J g_J \mu_B \qquad M_J \in \{-J, -J+1, ..., J-1, J\}
 \end{equation}
 annehmen kann. 
 $M_J$ wird \textit{Orientierungsquantenzahl} genannt.
-Der Landefaktor eines Elektrons mit der Spinquantenzahl $S$, der Bahndrehimpulsquantenzahl $L$ und der Gesamtdrehimpulsquantenzahl $J$ ist gegeben durch
+Der Landéfaktor eines Elektrons mit der Spinquantenzahl $S$, der Bahndrehimpulsquantenzahl $L$ und der Gesamtdrehimpulsquantenzahl $J$ ist gegeben durch
 \begin{equation}
     \label{eq:afrika}
-g_J \approx \frac{3 J(J+1)+S(S+1)- L(L+1)}{2J(J+2)}\, .
+g_J \approx \frac{3 J(J+1)+S(S+1)- L(L+1)}{2J(J+1)}\, .
 \end{equation}
 
-Wird ein externes Magnetfeld $B$ angelegt erfährt das Elektron eine Energieänderung von
+Wird ein externes Magnetfeld $B$ angelegt, erfährt das Elektron eine Energieänderung von
 \begin{equation}\label{eq:deltaE}
 E_{mag} = M_J g_J \mu_B B \, .
 \end{equation}
@@ -70,7 +70,7 @@ Eine schematische Darstellung der Aufspaltung der Energieniveaus durch die Hyper
 Die aufgespalteten Energieniveaus sind äquidistant mit der Energiedifferenz und Lande-Faktor
 \begin{equation}
 \label{eq:kernspin}
-\Delta E = g_F \mu_B B \qquad g_F \approx g_J \frac{3 F(F+1)+I(I+1)- I(I+1)}{2F(F+2)}\, .
+\Delta E = g_F \mu_B B \qquad g_F \approx g_J \frac{3 F(F+1)+I(I+1)- I(I+1)}{2F(F+1)}\, .
 \end{equation}
 
 \subsubsection*{Der Quadratische Zeeman-Effekt}
@@ -99,7 +99,7 @@ Absorption tritt auf, wenn die Energie eines eintreffenden Photons ausreicht um 
 \noindent
 
 Die Übergänge unterliegen bestimmten Auswahlkriterien, sodass ein Übergang zwischen zwei Energieniveaus nur dann möglich ist, wenn $\Delta M_J$ bestimmen Werten entspricht.
-Außerdem können diese Übergänge nur durch Licht einer bestimmten Polarisiation stimuliert werden und bei einer Emission wird auch nur Licht der entsprechenden Polarisiation emittiert.
+Außerdem können diese Übergänge nur durch Licht einer bestimmten Polarisation stimuliert werden und bei einer Emission wird auch nur Licht der entsprechenden Polarisation emittiert.
 Es sind drei Arten von Übergängen möglich:
 \begin{itemize}
 \item \textbf{$\sigma^+$-Übergang}: $\Delta M_J=1$ $\rightarrow$ rechtszirkular polarisiertes Licht
@@ -117,7 +117,7 @@ In Abbildung \ref{fig:tfig3} sind die möglichen Übergänge zwischen den Zeeman
 \FloatBarrier
 \noindent
 
-Diese selektiven Eigenschaften werden beim optischen Pumpen ausgenutzt, um ein Energieniveau vollständig leerzupumpen.
+Diese selektiven Eigenschaften werden beim optischen Pumpen ausgenutzt, um ein Energieniveau vollständig leer zu pumpen.
 Hierzu wird ein Dampf bestehend aus Alkali-Atomen in ein Magnetfeld gebracht und mit rechtzirkular polarisierten Licht bestrahlt.
 Dieser Dampf befinde sich im thermischen Gleichgewicht, sodass die Atome sich im Grundzustand $^2S_{1/2}$ befinden.
 Der Zustand $M_J = -\frac{1}{2}$ ist nach \eqref{eq:boltzmann} aufgrund der geringeren Energie stärker besetzt.
@@ -135,7 +135,7 @@ Das Pumpverfahren ist in Abbildung \ref{fig:tfig4} dargestellt.
 \FloatBarrier
 \noindent
 Sobald das $^2S_{1/2}$-Niveau mit $M_J=-\frac{1}{2}$ leergepumpt ist, findet keine Absorption mehr statt und das Gas wird für das rechtzirkulare Licht durchsichtig.
-Die Intensität des transmittierten Lichtes zeigt demnach einen, wie in Abbildung \ref{fig:tfig5} dargestellten, Verlauf.
+Die Intensität des transmittierten Lichtes zeigt demnach einen wie in Abbildung \ref{fig:tfig5} dargestellten Verlauf.
 \FloatBarrier
 \begin{figure}[h]
     \centering
@@ -146,19 +146,21 @@ Die Intensität des transmittierten Lichtes zeigt demnach einen, wie in Abbildun
 \FloatBarrier
 \noindent
 
-\subsubsection*{Präzessionsmessung der Zeeman-Aufspaltung}
-In diesem Versuch soll das Optische Pumpen genutzt werden um die Energiedifferenz der Zeeman-Niveaus zu bestimmen und somit den Lande-Faktor zu erhalten.
+\subsubsection*{Präzisionsmessung der Zeeman-Aufspaltung}
+In diesem Versuch soll das Optische Pumpen genutzt werden um die Energiedifferenz der Zeeman-Niveaus zu bestimmen und somit den Landé-Faktor zu erhalten.
 Die Wahrscheinlichkeit für spontane Emission zeigt eine kubische Abhängigkeit von der Frequenz.
 Da die Zeeman Niveaus in einem vergleichsweise schmalen Frequenzbereich liegen, spielt spontane Emission kaum eine Rolle und es kann angenommen werden, dass es zwischen den $^2S_{1/2}$-Niveaus nur zu stimulierter Emission kommen kann.
 Durch stimulierte Emission können also erneut Atome in das leergepumpte Niveau gelangen. 
 Dies ist allerdings nur möglich, wenn das Gas mit einem Hochfrequenzfeld bestrahlt wird, welches genau der Energiedifferenz der Zeeman-Niveaus entspricht
-\begin{equation}\label{eq: Magnetfeld}
-h\nu = g_J \mu_B B_m \Delta M_J \, .
-\end{equation}
+\begin{align}\label{eq: Magnetfeld}
+    h\nu &= g_J \mu_B B_m \Delta M_J \, , \\
+\intertext{bzw.}
+    B_m &= \frac{4 \pi m_0 \nu}{e_0 g_J} \, .
+\end{align}
 
-Unter Variation des Magnetfeldes, kann beobachtet werden, dass die Absorption wieder einsetzt sobald Gleichung \eqref{eq: Magnetfeld} erfüllt ist.
+Unter Variation des Magnetfeldes kann beobachtet werden, dass die Absorption wieder einsetzt, sobald Gleichung \eqref{eq: Magnetfeld} erfüllt ist.
 Denn dann befinden sich wieder Atome im $M_J= -\frac{1}{2}$ Niveau die durch Absorption angeregt werden können.
-Der Transmissionskoeffient zeigt also ein Minimum bei $B=B_m$, wie in Abbildung \ref{fig:tfig6} zu sehen ist.
+Der Transmissionskoeffizient zeigt also ein Minimum bei $B=B_m$, wie in Abbildung \ref{fig:tfig6} zu sehen ist.
 \FloatBarrier
 \begin{figure}[h]
     \centering
@@ -170,15 +172,17 @@ Der Transmissionskoeffient zeigt also ein Minimum bei $B=B_m$, wie in Abbildung 
 \noindent
 
 In Abbildung \ref{fig:tfig6} ist ein weiteres Minimum bei $B=0$ zu sehen.
-Dieses kommt dadurch zu stande, dass für B=0 keine Zeeman-Niveaus vorliegen und der optische Pumpprozess somit nicht möglich ist.
+Dieses kommt dadurch zustande, dass für B=0 keine Zeeman-Niveaus vorliegen und der optische Pumpprozess somit nicht möglich ist.
 Im Realfall wird dieses Minimum nicht genau dann erreicht, wenn das Magnetfeld der Apparatur abgeschaltet ist, sondern dann, wenn dieses das Erdmagnetfeld vollständig kompensiert hat.
 
 Die Magnetfelder in diesem Versuch werden durch Helmholtzspulen erzeugt.
 Die magnetische Feldstärke ist zwischen den Spulen näherungsweise konstant und beträgt
 \begin{equation}
+    \label{eq:helmholtz}
 B= \left(\frac{4}{5}\right)^{\frac{3}{2}}\frac{\mu_0 n I}{R} \, .
 \end{equation}
 
+\newpage
 \section{Versuchsaufbau}
 \FloatBarrier
 \begin{figure}[h]
@@ -190,16 +194,16 @@ B= \left(\frac{4}{5}\right)^{\frac{3}{2}}\frac{\mu_0 n I}{R} \, .
 \FloatBarrier
 \noindent
 Der Aufbau der in diesem Versuch verwendeten Apparatur ist in Abbildung \ref{fig:tfig7} zu sehen.
-Das Licht welches die Rubidium Atome anregen soll wird durch eine Rubidium Spektrallampe erzeugt und mit einer Sammellinse kollimiert.
+Das Licht, welches die Rubidium Atome anregen soll, wird durch eine Rubidium-Spektrallampe erzeugt und mit einer Sammellinse kollimiert.
 Direkt im Anschluss befinden sich ein Interferenzfilter, ein Polarisationsfilter und ein $\lambda/4$-Plättchen.
-Der Intereferenzfilter lässt nur die $D_1$-Wellenlänge ($\lambda = 794,8 \, \si{\nm}$) hindurch, welche benötigt wird um den $\sigma^{+}$-Übergang anzuregen.
+Der Interferenzfilter lässt nur die $D_1$-Wellenlänge ($\lambda = 794,8 \, \si{\nm}$) hindurch, welche benötigt wird um den $\sigma^{+}$-Übergang anzuregen.
 Durch den Interferenzfilter wird das Licht zunächst linear polarisiert und durch das $\lambda/4$-Plättchen anschließend das gewünschte rechtszirkular polarisierte Licht erhalten.
 
 In der Dampfzelle befindet sich das Rubidium.
 Durch einen Ofen wird diese geheizt um einen optimalen Dampfdruck zu erzeugen.
-Das hindurchtretene Licht wird wiederum mit einer Sammellinse auf ein Fotoelement fokussiert, sodass die Lichtintensität von einem Oszilloskop abgelesen werden kann.
+Das hindurchtretende Licht wird wiederum mit einer Sammellinse auf ein Fotoelement fokussiert, sodass die Lichtintensität von einem Oszilloskop abgelesen werden kann.
 
-Die Dampfzelle ist von drei Helmholtzspulenpaaren umgeben, von denen zwei ein horizonteles Feld und eine ein vertikales Feld erzeugen.
+Die Dampfzelle ist von drei Helmholtzspulenpaaren umgeben, von denen zwei ein horizontales Feld und eine ein vertikales Feld erzeugen.
 Eine Übersicht der Spulen, deren Eigenschaften und Aufgaben sind in Tabelle \ref{tab:ttab1} zu finden.
 \FloatBarrier
 \begin{table}[h]
@@ -210,9 +214,9 @@ Eine Übersicht der Spulen, deren Eigenschaften und Aufgaben sind in Tabelle \re
         \toprule
         {Spule} & {Ausrichtung} & {Radius} & {Windungen} & {Aufgabe} \\
         \midrule
-        Sweep-Spule & horizontal & $16,39\,\si{\cm}$ & $11$ & variierendes Magnetfeld\\
-        Horizontalfeld-Spule & horizontal & $15,79\,\si{\cm}$ & $154$ & statisches Magnetfeld\\
-        Vertikalfeld-Spule & vertikal & $11,735\,\si{\cm}$ & $20$ & Kompensation des Erdmagnetfeldes\\
+        Sweep & horizontal & $16,39\,\si{\cm}$ & $11$ & variierendes Magnetfeld\\
+        Horizontalfeld & horizontal & $15,79\,\si{\cm}$ & $154$ & statisches Magnetfeld\\
+        Vertikalfeld & vertikal & $11,735\,\si{\cm}$ & $20$ & Kompensation des Erdmagnetfeldes\\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -227,27 +231,24 @@ Die Sweep-Spule erzeugt nun ein kontinuierliches Feld zwischen $0-1\,\si{\A}$ mi
 Auf dem Oszilloskop ist nun ein breiter Peak, wie der erste in Abbildung \ref{fig:tfig6}, zu beobachten.
 Das Erdmagnetfeld ist bestmöglich kompensiert, wenn der Peak besonders schmal ist.
 Um einen schmalen Peak zu erreichen, wird die Vertikalspule variiert.
-Anschließend wird die Apparatur in Nord-Süd-Richtung gedreht, sodass die horizontale Komponente des Erdmagnetfeldes parralell zum Magnetfeld der Horizontalenfeld-Spule ist.
+Anschließend wird die Apparatur in Nord-Süd-Richtung gedreht, sodass die horizontale Komponente des Erdmagnetfeldes parallel zum Magnetfeld der Horizontalenfeld-Spule ist.
 
 Es wird eine Sinusspannung mit $100\,\si{\kHz}$ und einer Amplitude von $4\,\text{V}_{\text{pp}}$ angelegt.
-Die Frequenzen der RF-Spule werden nun in $100\,\si{kHz}$-Schritten zwischen $100\si{\kHz}$ und $1\si{\MHz}$ erhöht.
+Die Frequenzen der RF-Spule werden nun in $100\,\si{kHz}$-Schritten zwischen $100\,\si{\kHz}$ und $1\,\si{\MHz}$ erhöht.
 Es sind nun immer zwei Peaks zu beobachten, welche jeweils den beiden Isotopen $^{87}$RB und $^{85}$RB zuzuordnen sind.
-Für beide Rosonanzen wird jeweils das Magnetfeld $B_m$ gemessen.
+Für beide Resonanzen wird jeweils das Magnetfeld $B_m$ gemessen.
 Bei höheren Frequenzen muss zusätzlich die Horizontalfeld-Spule angelegt werden um das Sweep-Feld auf die benötigten Bereiche zu verschieben.
-Die Einstellung der Horizontalfeld-Spule und die Position an der das Sweep-Feld die Resonanz erreicht werden notiert.
+Die Einstellung der Horizontalfeld-Spule und die Position, an der das Sweep-Feld die Resonanz erreicht, werden notiert.
 
 \section{Auswertung}
 \subsection{Bestimmung des Kernspins der Rubidium-Kerne}
 Zuerst wird aus den Messwerten für die Stromstärke $I$ in Abhängigkeit von der Frequenz $f$ die Stärke des Magnetfelds 
-$B$ über die Formel für die Magnetfeldstärke in einer Helmholtzspule
-\begin{equation*}
-    B(0) = \frac{8}{\sqrt{125}}\mu_0\frac{N I}{R}
-\end{equation*}
+$B$ über Formel \eqref{eq:helmholtz}
 berechnet. Die Messwerte, sowie die berechnete Magnetfeldstärke, sind in Tabelle \ref{tab:atab1} und \ref{tab:atab2} angegeben.
 \FloatBarrier
 \begin{table}[h]
     \centering
-    \caption{Gemessene Werte der Stromstärke $I$ sowie berechnete Werte der Magnetfeldstärke $B$ Sweep- und Horizontalfeldspule und Gesamtfelstärke an der ersten Resonanzstelle.}
+    \caption{Gemessene Werte der Stromstärke $I$ sowie berechnete Werte der Magnetfeldstärke $B$ Sweep- und Horizontalfeldspule und Gesamtfeldstärke an der ersten Resonanzstelle.}
     \label{tab:atab1}
     \begin{tabular}{c c c c c c}
         \toprule
@@ -315,7 +316,7 @@ Dazu wird Gleichung \eqref{eq:kernspin} mit $F = I + J$ nach $I$ umgestellt. Es 
 \begin{equation*}
     I = \frac{g_J}{4 g_F} - 1 + \sqrt{\left(\frac{g_J}{4 g_F} - 1\right)^2 + \frac{3}{4} \left(\frac{g_J}{g_F} - 1\right)} \, , 
 \end{equation*}
-wobei sich für $g_J$ entsprechend Formel \eqref{eq:afrika} mit den Quantenzahlen $L = 0, \, S = 1/2, \, J = 1/2$ zu 
+wobei sich $g_J$ entsprechend Formel \eqref{eq:afrika} mit den Quantenzahlen $L = 0, \, S = 1/2, \, J = 1/2$ zu 
 $g_J = 2$ ergibt.
 Für die Kernspins $I$ der Rubidium-Kerne ergeben sich dann die Werte
 \begin{align*}

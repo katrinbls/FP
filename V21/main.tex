@@ -40,6 +40,7 @@ annehmen kann.
 $M_J$ wird \textit{Orientierungsquantenzahl} genannt.
 Der Landefaktor eines Elektrons mit der Spinquantenzahl $S$, der Bahndrehimpulsquantenzahl $L$ und der Gesamtdrehimpulsquantenzahl $J$ ist gegeben durch
 \begin{equation}
+    \label{eq:afrika}
 g_J \approx \frac{3 J(J+1)+S(S+1)- L(L+1)}{2J(J+2)}\, .
 \end{equation}
 
@@ -68,12 +69,14 @@ Eine schematische Darstellung der Aufspaltung der Energieniveaus durch die Hyper
 \noindent
 Die aufgespalteten Energieniveaus sind äquidistant mit der Energiedifferenz und Lande-Faktor
 \begin{equation}
+\label{eq:kernspin}
 \Delta E = g_F \mu_B B \qquad g_F \approx g_J \frac{3 F(F+1)+I(I+1)- I(I+1)}{2F(F+2)}\, .
 \end{equation}
 
 \subsubsection*{Der Quadratische Zeeman-Effekt}
 Für starke Magnetfelder muss der Energiedifferenz \eqref{eq:deltaE} ein Korrekturterm der Form
 \begin{equation}
+    \label{eq:zeemanman}
 \Delta E = g_F \mu_B B + g_F^2 \mu_B^2 B^2 \frac{1-2M_F}{\Delta E_{Hy}}
 \end{equation}
 hinzugefügt werden.
@@ -233,10 +236,174 @@ Für beide Rosonanzen wird jeweils das Magnetfeld $B_m$ gemessen.
 Bei höheren Frequenzen muss zusätzlich die Horizontalfeld-Spule angelegt werden um das Sweep-Feld auf die benötigten Bereiche zu verschieben.
 Die Einstellung der Horizontalfeld-Spule und die Position an der das Sweep-Feld die Resonanz erreicht werden notiert.
 
-
 \section{Auswertung}
+\subsection{Bestimmung des Kernspins der Rubidium-Kerne}
+Zuerst wird aus den Messwerten für die Stromstärke $I$ in Abhängigkeit von der Frequenz $f$ die Stärke des Magnetfelds 
+$B$ über die Formel für die Magnetfeldstärke in einer Helmholtzspule
+\begin{equation*}
+    B(0) = \frac{8}{\sqrt{125}}\mu_0\frac{N I}{R}
+\end{equation*}
+berechnet. Die Messwerte, sowie die berechnete Magnetfeldstärke, sind in Tabelle \ref{tab:atab1} und \ref{tab:atab2} angegeben.
+\FloatBarrier
+\begin{table}[h]
+    \centering
+    \caption{Gemessene Werte der Stromstärke $I$ sowie berechnete Werte der Magnetfeldstärke $B$ Sweep- und Horizontalfeldspule und Gesamtfelstärke an der ersten Resonanzstelle.}
+    \label{tab:atab1}
+    \begin{tabular}{c c c c c c}
+        \toprule
+        {$f / \text{kHz}$} & {$I_{\text{Sweep}} / \text{A}$} & {$B_{\text{Sweep}} / \symup{\mu T}$} & {$I_{\text{Hor}} / \text{A}$} & {$B_{\text{Hor}} / \symup{\mu T}$} & {$B_{\text{Ges}} / \symup{\mu T}$} \\
+        \midrule
+        100  & 0.551 & 33.251 & 0     & 0      & 33.251 \\
+        200  & 0.486 & 29.329 & 0     & 0      & 29.329 \\
+        300  & 0.297 & 17.923 & 0.015 & 13.155 & 31.078 \\
+        400  & 0.263 & 15.871 & 0.03  & 26.309 & 42.180 \\
+        500  & 0.246 & 14.845 & 0.048 & 42.094 & 56.940 \\
+        600  & 0.170 & 10.259 & 0.072 & 63.142 & 73.401 \\
+        700  & 0.105 &  6.336 & 0.09  & 78.927 & 85.264 \\
+        800  & 0.381 & 22.992 & 0.09  & 78.927 & 101.919 \\
+        900  & 0.618 & 37.295 & 0.09  & 78.927 & 116.222 \\
+        1000 & 0.854 & 51.537 & 0.09  & 78.927 & 130.464 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+\FloatBarrier
+\noindent
+\FloatBarrier
+\begin{table}[h]
+    \centering
+    \caption{Gemessene Werte der Stromstärke $I$ sowie berechnete Werte der Magnetfeldstärke $B$ Sweep- und Horizontalfeldspule und Gesamtfeldstärke an der zweiten Resonanzstelle.}
+    \label{tab:atab2}
+    \begin{tabular}{c c c c c c}
+        \toprule
+        {$f / \text{kHz}$} & {$I_{\text{Sweep}} / \text{A}$} & {$B_{\text{Sweep}} / \symup{\mu T}$} & {$I_{\text{Hor}} / \text{A}$} & {$B_{\text{Hor}} / \symup{\mu T}$} & {$B_{\text{Ges}} / \symup{\mu T}$} \\
+        \midrule
+        100  & 0.670 & 40.433 & 0     & 0       & 40.433 \\
+        200  & 0.722 & 43.571 & 0     & 0       & 43.571 \\
+        300  & 0.654 & 39.467 & 0.015 & 13.155  & 52.622 \\
+        400  & 0.738 & 44.537 & 0.03  & 26.309  & 70.845 \\
+        500  & 0.837 & 50.511 & 0.048 & 42.094  & 92.605 \\
+        600  & 0.818 & 49.364 & 0.072 & 63.142  & 112.506 \\
+        700  & 0.933 & 56.304 & 0.09  & 78.927  & 135.231 \\
+        800  & 0.852 & 51.416 & 0.12  & 105.236 & 156.652 \\
+        900  & 0.519 & 31.320 & 0.168 & 147.331 & 178.651 \\
+        1000 & 0.492 & 29.691 & 0.192 & 168.378 & 198.069 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+\FloatBarrier
+\noindent
+Mit diesen Werten wird nun zur Bestimmung der Landé-Faktoren $g_F$ eine lineare Ausgleichsrechnung durchgeführt.
+Dazu wird das \texttt{python}-Paket \texttt{NumPy.polyfit} verwendet. Es werden dabei jeweils die ersten beiden Werte
+nicht in der Ausgleichsrechnung berücksichtigt, da sie die Ergebnisse deutlich verschlechtern. 
+\FloatBarrier
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{magnetfeld.pdf}
+    \caption{Lineare Ausgleichsrechnung zur Bestimmung der Landé-Faktoren $g_F$. Dargestellt ist die Magnetfeldstärke in Abhängigkeit von der Frequenz für beide Resonanzstellen.}
+    \label{fig:afig1}
+\end{figure}
+\FloatBarrier
+\noindent
+Die Landé-Faktoren ergeben sich aus der Steigung der Ausgleichgeraden durch Umstellen von Formel \eqref{eq: Magnetfeld} zu
+\begin{align*}
+    g_{F_1} &= (0.495 \pm 0.007) \, ,\\
+    g_{F_2} &= (0.3387  \pm 0.0030) \, .
+\end{align*}
+
+Mit diesen Landé-Faktoren ist nun eine Berechnung des Kernspins $I$ der Rubidium-Isotope möglich. 
+Dazu wird Gleichung \eqref{eq:kernspin} mit $F = I + J$ nach $I$ umgestellt. Es ergibt sich
+\begin{equation*}
+    I = \frac{g_J}{4 g_F} - 1 + \sqrt{\left(\frac{g_J}{4 g_F} - 1\right)^2 + \frac{3}{4} \left(\frac{g_J}{g_F} - 1\right)} \, , 
+\end{equation*}
+wobei sich für $g_J$ entsprechend Formel \eqref{eq:afrika} mit den Quantenzahlen $L = 0, \, S = 1/2, \, J = 1/2$ zu 
+$g_J = 2$ ergibt.
+Für die Kernspins $I$ der Rubidium-Kerne ergeben sich dann die Werte
+\begin{align*}
+    I_1 &= (1.521 \pm 0.029) \, ,\\
+    I_2 &= (2.453 \pm 0.026) \, .
+\end{align*}
+
+\subsection{Bestimmung des Isotopenverhältnisses}
+Um das Isotopenverhältnis zu bestimmen, werden die Peaks der beiden Resonanzstellen in der Oszilloskop-Aufnahme in Abbildung \ref{fig:afig2} vermessen.
+\FloatBarrier
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{TEK0016.JPG}
+    \caption{Aufnahme des Oszilloskops bei $f = 100 \, \text{kHz}$.}
+    \label{fig:afig2}
+\end{figure}
+\FloatBarrier
+\noindent
+Die Vermessung erfolgt dabei in Pixeln (px). Für die beiden Resonanzstellen $r_1$ und $r_2$ wird
+\begin{align*}
+    r_1 &= 37 \text{px} \sim 38.1 \% \\
+    r_2 &= 60 \text{px} \sim 61.9 \% \\
+\end{align*}
+gemessen. 
+Das Isotopenverhältnis ist daher etwa 38:62.
+
+\subsection{Untersuchung des quadratischen Zeeman-Effekts}
+Die Abschätzung der Größe des quadratischen Zeeman-Effekts erfolgt mit Formel \eqref{eq:zeemanman}.
+Die Hyperfeinstrukturaufspaltung des Grundzustands der einzelnen Isotope beträgt 
+\begin{align*}
+    ^{87}\text{Rb}&: \; 4.53 \cdot 10^{24} \, \si{\joule} \, , \\
+    ^{85}\text{Rb}&: \; 2.01 \cdot 10^{24} \, \si{\joule} \, .
+\end{align*}
+Bei der Abschätzung wird in beiden Fällen der höchste Wert der Magnetfeldstärke verwendet.
+Die Ergebnisse für den linearen und quadratischen Zeeman-Effekt sind in Tabelle \ref{tab:atab3} angegeben.
+Zusätzlich wird die Differenz dieser Werte berechnet. 
+\FloatBarrier
+\begin{table}[h]
+    \centering
+    \caption{Ergebnisse der Abschätzung zum Vergleich von linearem und quadratischem Zeeman-Effekt}
+    \label{tab:atab3}
+    \begin{tabular}{l c c c c c}
+        \toprule
+        {Isotop} & {$B / \symup{\mu T}$} & {$M_F$} & {Linearer Effekt} & {Quadratischer Effekt} & {Differenz} \\
+        \midrule
+        {$^{87}\text{Rb}$} & 130.464 & 2 & {$(5.99 \pm 0.09) \cdot 10^{-28}$} & {$(5.99 \pm 0.09) \cdot 10^{-28}$} & {$(2.37 \pm 0.07) \cdot 10^{-31}$} \\
+        {$^{85}\text{Rb}$} & 198.069 & 3 & {$(6.22 \pm 0.06) \cdot 10^{-28}$} & {$(6.21 \pm 0.06) \cdot 10^{-28}$} & {$(9.63 \pm 0.17) \cdot 10^{-31}$} \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+\FloatBarrier
+\noindent
 
 \section{Diskussion} \label{sec: Diskussion}
+Zum Vergleich der experimentell bestimmten Ergebnisse der Kernspins der beiden Isotope sind diese mit den Literaturwerten 
+aus \cite{chemgapedia} sowie die relative Abweichung in Tabelle \ref{tab:distab1} angegeben.
+\FloatBarrier
+\begin{table}[h]
+    \centering
+    \caption{Literaturwerte und experimentell bestimmte Werte der Kernspins von $^{87}\text{Rb}$ und $^{85}\text{Rb}$ sowie prozentuale Abweichung.}
+    \label{tab:distab1}
+    \begin{tabular}{l c c c}
+        \toprule
+        {Isotop} & {$I_\text{Literatur}$} & {$I_\text{Experiment}$} & {Abweichung / \%} \\
+        \midrule
+        {$^{87}\text{Rb}$} & 3/2 & (1.521 \pm 0.029) & 1.40 \\
+        {$^{85}\text{Rb}$} & 5/2 & (2.453 \pm 0.026) & 1.88 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+\FloatBarrier
+\noindent
+Diese Werte stimmen offenbar gut mit den Literaturwerten überein. Hierbei ist jedoch zu berücksichtigen, 
+dass die ersten beiden Werte der Messung nicht verwendet wurden. Mit ihnen wäre die Abweichung der Ergebnisse
+deutlich größer. 
+
+Das Verhältnis der Isotope wird zu 38:62 bestimmt. Der Literaturwert aus \cite{periodensysteminfo}
+ist 28:72, die Abweichung des experimentellen Werts beträgt 56.6 \%. Ein Grund dafür kann das systematische Vorgehen
+sein, da die Vermessung der Peaks in Pixeln ungenau war. Durch eine präzisere Vermessung kann hier ein exakteres
+Ergebnis erzielt werden.
+
+Die Ergebnisse der Abschätzung des quadratischen Zeeman-Effekts in Tabelle \ref{tab:atab3} zeigen deutlich, 
+dass Terme höherer Ordnung hier vernachlässigt werden können. Die Differenz aus der Berechnung von linearen Zeeman-Effekt
+und quadratischem Zeeman-Effekt ist um drei Größenordnungen kleiner als der berechnete Wert des linearen Zeeman-Effekts.
+Es kann daher geschlussfolgert werden, dass die Stärke des Magnetfeldes ausreichend klein ist, um Terme höherer 
+Ordnung vernachlässigen zu können.
+
+
 
 \nocite{wingate}
 \nocite{*}

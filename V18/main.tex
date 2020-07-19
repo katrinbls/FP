@@ -3,6 +3,10 @@
 \begin{document}
 
 \maketitle
+\thispagestyle{empty}
+\tableofcontents
+\newpage
+
 \section{Zielsetzung}
 Ziel dieses Versuches ist die Untersuchung der Spektren von unbekannten Strahlern bezüglich der Energie und Aktivität.
 Hierzu werden zuerst die Detektoreigenschaften anhand bekannter Strahler bestimmt. 
@@ -265,7 +269,7 @@ Aus diesem Grund ist die Compton-Kante keine scharfe Kante, sondern ist leicht v
 
 Bei einige Gamma-Quanten kommt es auch zu Wechselwirkungen mit der Abschirmung des Detektors und somit zu Energieverlust.
 Diese können von der Abschirmung zurückgestreut werden, sodass sie den Detektor mit geringerer Energie erreichen.
-Der dadruch erzeugte Peak wird Rückstreupeak genannt und entspricht einer Energie von
+Der dadurch erzeugte Peak wird Rückstreupeak genannt und entspricht einer Energie von
 \begin{equation}
     \label{eq:ruckstreu}
 E_\text{Rück}= \frac{E_{\gamma}}{1+2\varepsilon}\, .
@@ -651,8 +655,9 @@ ein linearer Zusammenhang. Der Proportionalitätsfaktor ist
 \begin{equation}
     \rho = P \cdot \frac{\Omega}{4 \pi} \cdot t \cdot Q \, .
 \end{equation}
-Der Raumwinkelanteil und der relevante Zusammenhang zur Bestimmung der Nachweiswahrscheinlichkeit $Q$ ist bereits aus Abschnitt \ref{sec:nachweis} bekannt \eqref{eq:potenz}, 
+Der Raumwinkelanteil und der relevante Zusammenhang zur Bestimmung der Nachweiswahrscheinlichkeit $Q$ ist bereits aus Abschnitt \ref{sec:nachweis} bekannt \eqref{eq:potenz},
 wobei die dort bestimmten Parameter \eqref{eq:parameter_potenz} verwendet werden. 
+
 Es wird daher eine lineare Ausgleichsrechnung durchgeführt, welche in Abbildung \ref{fig:ausgleichsrechnung-barium} dargestellt ist.
 Über den Parameter $a$ erhält man so die Aktivität.
 %\FloatBarrier
@@ -690,13 +695,17 @@ Die Parameter dieser Ausgleichsrechnung ergeben sich zu
 \noindent
 \subsection{Nuklididentifikation und Aktivitätsbestimmung eines unbekannten Strahlers}
 Als Anwendung des Germanium-Detektors werden nun Bananenchips als Probe untersucht.
+
 Bei der Messung des Spektrums wurde jedoch nicht nur das Spektrum dieses unbekannten Strahlers, sondern auch ein Untergrundspektrum gemessen.
 Das Untergrundspektrum wurde zusätzlich in einer Messung ohne Probe aufgenommen und muss zuerst
-abgezogen werden. Relevant für die Analyse eines Spektrums sind jedoch nur die Peaks. Daher werden zuerst 
+abgezogen werden. 
+
+Relevant für die Analyse eines Spektrums sind jedoch nur die Peaks. Daher werden zuerst 
 die Kanalnummer der Peaks des Untergrundspektrums bestimmt. Die Anzahl der Counts an dieser Kanalnummer und in einer 
 Umgebung von 20 Kanalnummern wird dann vom Spektrum der Probe abgezogen.
 Außerdem werden die ersten 1000 Kanäle nicht berücksichtigt, da dort ein starkes Untergrundrauschen besteht, wodurch 
 keine genaue Analyse möglich ist.
+
 Zu Bestimmung der Kanalnummern der Peaks des Untergrundspektrums wird wieder die Funktion \texttt{SciPy.find\_peaks} verwendet.
 Nachdem der Untergrund vom Spektrum der Probe abgezogen ist, wird erneut eine Energiekalibrierung durchgeführt. 
 Das Energiespektrum der Probe ist in Abbildung \ref{fig:banane_energie} dargestellt, die gefundenen Peaks sind durch einen Punkt markiert.
@@ -708,6 +717,7 @@ Das Energiespektrum der Probe ist in Abbildung \ref{fig:banane_energie} dargeste
 \label{fig:banane_energie}
 \end{figure}
 %\FloatBarrier 
+
 Die Peaks werden nun mit einer Gausskurve \eqref{eq:gaussfit} gefittet, um den Inhalt der Linien zu bestimmen.
 Die relevanten Größen sowie der Inhalt der Linien sind in Tabelle \ref{tab:banane-inhalt} angegeben.
 \begin{table}[h]
